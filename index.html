@@ -243,8 +243,14 @@
             margin-bottom: 8px;
         }
 
-        #bibbase_items [href*="Liguang"], 
-        #bibbase_items:contains("Wang, Liguang") {
+        /* 1. Make the publication titles regular weight (not bold) */
+        #bibbase_items .bibbase_title {
+            font-weight: normal !important;
+        }
+
+        /* 2. Make the journal/booktitle names bold */
+        #bibbase_items .bibbase_journal,
+        #bibbase_items .bibbase_booktitle {
             font-weight: bold !important;
         }
 
@@ -481,25 +487,6 @@
 
         window.addEventListener('hashchange', runRouter);
         window.addEventListener('DOMContentLoaded', runRouter);
-    </script>
-    <script>
-        // Wait for BibBase to finish loading and rendering on the screen
-        const observer = new MutationObserver((mutations, obs) => {
-            const bibContainer = document.getElementById('publications');
-            if (bibContainer && bibContainer.innerText.includes("Wang, Liguang")) {
-                // Find all elements containing your name and make them bold
-                bibContainer.innerHTML = bibContainer.innerHTML.replace(
-                    /Wang, Liguang\/g, 
-                    "<strong>Wang, Liguang</strong>"
-                );
-                obs.disconnect(); // Stop looking once changed
-            }
-        });
-
-        observer.observe(document.body, {
-            childList: true,
-            subtree: true
-        });
     </script>
 </body>
 </html>
