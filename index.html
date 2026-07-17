@@ -1317,6 +1317,9 @@
         <div class="container text-center text-muted">
             <p class="mb-1">&copy; 2026 Dr. Liguang Wang. All rights reserved.</p>
             <p class="small text-secondary mb-0">College of Chemical and Biological Engineering • Zhejiang University</p>
+            <p class="small text-secondary mb-0">
+                <i class="fa-regular fa-eye me-1"></i> Visitors: <span id="visitor-count" class="fw-bold">...</span>
+            </p>
         </div>
     </footer>
 
@@ -1353,5 +1356,29 @@
         window.addEventListener('hashchange', runRouter);
         window.addEventListener('DOMContentLoaded', runRouter);
     </script>
+
+<!-- Visitor Counter Script -->
+    <script>
+        function getVisitorCount() {
+            // Replace 'yourdomain.com' with your actual website URL (e.g., liguangwang.github.io)
+            // This acts as a unique key for your counter database
+            const uniqueKey = "yourdomain.com"; 
+            
+            fetch(`https://api.countapi.xyz/hit/${uniqueKey}/visits`)
+                .then(res => res.json())
+                .then(data => {
+                    document.getElementById('visitor-count').innerText = data.value.toLocaleString();
+                })
+                .catch(err => {
+                    // Fallback if the free API is offline or blocked by an ad-blocker
+                    document.getElementById('visitor-count').innerText = "1"; 
+                    console.error("Counter error: ", err);
+                });
+        }
+
+        // Run the counter function when the page loads
+        window.addEventListener('DOMContentLoaded', getVisitorCount);
+    </script>
+    
 </body>
 </html>
