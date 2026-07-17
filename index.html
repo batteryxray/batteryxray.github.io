@@ -1361,7 +1361,7 @@
             // This acts as a unique key for your counter database
             const uniqueKey = "https://batteryxray.github.io"; 
             
-            fetch(`https://api.countapi.xyz/hit/${uniqueKey}/visits`)
+            fetch('https://api.countapi.xyz/hit/${uniqueKey}/visits')
                 .then(res => res.json())
                 .then(data => {
                     document.getElementById('visitor-count').innerText = data.value.toLocaleString();
