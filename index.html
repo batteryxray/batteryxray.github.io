@@ -482,12 +482,15 @@
         window.addEventListener('hashchange', runRouter);
         window.addEventListener('DOMContentLoaded', runRouter);
     </script>
+    <script>
+        // Wait for BibBase to finish loading and rendering on the screen
         const observer = new MutationObserver((mutations, obs) => {
             const bibContainer = document.getElementById('publications');
-            if (bibContainer && bibContainer.innerText.includes("Wang, Liguang")) {
+            if (bibContainer && bibContainer.innerText.includes("Wang, Liguang*")) {
+                // Find all elements containing your name and make them bold
                 bibContainer.innerHTML = bibContainer.innerHTML.replace(
-                    /Wang, Liguang\/g, 
-                    "<strong>Wang, Liguang</strong>"
+                    /Wang, Liguang\*/g, 
+                    "<strong>Wang, Liguang*</strong>"
                 );
                 obs.disconnect(); // Stop looking once changed
             }
