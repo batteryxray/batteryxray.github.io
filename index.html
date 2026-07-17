@@ -236,22 +236,28 @@
             border-color: var(--accent-color);
         }
 
-        .pub-title {
-            font-weight: 600;
-            font-size: 1.15rem;
-            color: var(--primary-color);
-            margin-bottom: 8px;
-        }
-
-        /* 1. Make the publication titles regular weight (not bold) */
-        #bibbase_items .bibbase_title {
+        /* --- Robust BibBase Styling Fixes --- */
+        
+        /* 1. Force the publication titles to be regular font (not bold) */
+        #bibbase_items .bibbase_title,
+        #bibbase_items [class*="bibbase_title"],
+        .bibbase_title {
             font-weight: normal !important;
         }
 
-        /* 2. Make the journal/booktitle names bold */
+        /* 2. Force the journal and book titles to be bold */
         #bibbase_items .bibbase_journal,
-        #bibbase_items .bibbase_booktitle {
+        #bibbase_items .bibbase_booktitle,
+        .bibbase_journal,
+        .bibbase_booktitle {
             font-weight: bold !important;
+        }
+
+        /* 3. Highlight your bolded name style */
+        #bibbase_items .author-highlight,
+        #bibbase_items strong {
+            font-weight: bold !important;
+            color: var(--primary-color);
         }
 
         /* Footer */
@@ -303,9 +309,6 @@
                     <div class="d-flex justify-content-center gap-2">
                         <a href="mailto:wanglg@zju.edu.cn" class="btn btn-sm social-btn"><i class="fa-regular fa-envelope me-1"></i> Email</a>
                         <a href="https://scholar.google.com/citations?user=iT0dJ5MAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" class="btn btn-sm social-btn"><i class="fa-solid fa-graduation-cap me-1"></i> Scholar</a>
-<!--                        
-                        <a href="#" class="btn btn-sm social-btn"><i class="fa-brands fa-linkedin me-1"></i> LinkedIn</a>
--->
                     </div>
                 </div>
                 <div class="col-lg-8">
@@ -403,7 +406,8 @@
             <h2 class="section-title">Publications</h2>
             
             <div class="mb-5">
-                <script src="https://bibbase.org/show?bib=https://raw.githubusercontent.com/batteryxray/batteryxray.github.io/refs/heads/main/publications.bib&jsonp=1"></script>
+                <!-- Updated dynamically highlighted BibBase feed -->
+                <script src="https://bibbase.org/show?bib=https://raw.githubusercontent.com/batteryxray/batteryxray.github.io/refs/heads/main/publications.bib&author=Wang,+Liguang&highlight=Wang,+Liguang&jsonp=1"></script>
             </div>
         </div>
     </main>
