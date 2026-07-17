@@ -482,5 +482,21 @@
         window.addEventListener('hashchange', runRouter);
         window.addEventListener('DOMContentLoaded', runRouter);
     </script>
+        const observer = new MutationObserver((mutations, obs) => {
+            const bibContainer = document.getElementById('publications');
+            if (bibContainer && bibContainer.innerText.includes("Wang, Liguang")) {
+                bibContainer.innerHTML = bibContainer.innerHTML.replace(
+                    /Wang, Liguang\/g, 
+                    "<strong>Wang, Liguang</strong>"
+                );
+                obs.disconnect(); // Stop looking once changed
+            }
+        });
+
+        observer.observe(document.body, {
+            childList: true,
+            subtree: true
+        });
+    </script>
 </body>
 </html>
