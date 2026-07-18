@@ -155,6 +155,20 @@
             margin-bottom: 4px;
         }
 
+        /* Styling for News Images */
+        .news-img-wrapper {
+            max-width: 200px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+
+        .news-img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
         /* Projects Cards */
         .project-card {
             background: #ffffff;
@@ -199,26 +213,36 @@
             background: #ffffff;
             border: 1px solid #e2e8f0;
             border-radius: 12px;
-            padding: 30px 20px;
-            text-align: center;
+            overflow: hidden;
             box-shadow: 0 4px 6px rgba(0,0,0,0.02);
             height: 100%;
+            display: flex;
+            flex-direction: column;
+            transition: transform var(--transition-speed) ease;
+        }
+
+        .team-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .team-img-wrapper {
+            width: 100%;
+            background: #f8fafc; /* Subtle off-white backdrop for uneven aspect ratios */
+            display: flex;
+            justify-content: center;
+            align-items: center;
         }
 
         .team-avatar {
-            width: 130px;
-            height: 130px;
-            object-fit: cover;
-            border-radius: 50%;
-            margin-bottom: 18px;
-            border: 4px solid #f1f5f9;
+            width: 100%;
+            height: auto; /* Scales dynamically based on the image's original proportion */
+            display: block;
         }
 
-        .team-name {
-            font-family: 'Playfair Display', serif;
-            font-weight: 700;
-            color: var(--primary-color);
-            margin-bottom: 5px;
+        .team-info {
+            padding: 20px 15px;
+            text-align: center;
+            margin-top: auto; /* Pushes the text area to the bottom so cards remain uniform in height */
         }
 
         /* Custom Manual Publications List Layout */
@@ -343,14 +367,21 @@
                     <h1 class="bio-title mb-3">Liguang Wang</h1>
                     <p class="lead text-muted mb-4">Ph.D. • Professor • Battery materials & Synchrotron techniques</p>
                     <p class="mb-3">
-                        Welcome to our lab. My research centers around <strong>cathode materials, solid-state batteries, in-situ/operando synchrotron characterizations</strong>. 
+                        Welcome to our research group! 
                     </p>
                     <p class="mb-3">
-                        Our research includes 
+                        Our group focuses on developing advanced synchrotron X-ray imaging and spectroscopy techniques to reveal how energy materials evolve structurally and chemically under realistic operating conditions. By combining cutting-edge synchrotron instrumentation with quantitative imaging and spectroscopy approaches, we aim to uncover the fundamental mechanisms that govern the performance, degradation, and transformation of batteries and other electrochemical energy systems. 
                     </p>
+                    <p class="mb-3">
+                        Our research integrates a range of advanced characterization methods, including transmission X-ray microscopy (TXM), nano-computed tomography (nano-CT), and two- and three-dimensional X-ray absorption near-edge structure (2D/3D XANES) mapping. These techniques enable us to visualize and quantify structural, chemical, and electrochemical transformations across multiple length scales, providing new insights into the complex processes that control energy storage and conversion materials. 
+                    </p>
+                    <p class="mb-3">
+                        Building on extensive expertise in synchrotron instrumentation and beamline development at the Advanced Photon Source (APS), Argonne National Laboratory (ANL), our group is committed to advancing next-generation characterization methodologies while addressing critical challenges in sustainable energy technologies. 
+                    </p>
+
                     <div class="mt-4 pt-3 border-top border-light">
                         <p class="mb-1"><strong class="text-secondary">Location:</strong> Zijingang campus, Zhejiang University, Hangzhou, China</p>
-                        <p class="mb-0"><strong class="text-secondary">Seeking Students:</strong> I am actively seeking passionate graduate students and Postdoc with backgrounds in electrochemistry or/and AI.</p>
+                        <p class="mb-0"><strong class="text-secondary">Join Us:</strong> We are always interested in working with motivated students, postdoctoral researchers, and collaborators who share our passion for synchrotron science, advanced characterization, and sustainable energy techniques.</p>
                     </div>
                 </div>
             </div>
@@ -364,6 +395,27 @@
                 <div class="col-lg-10 col-xl-8">
                     <div class="news-timeline">
                         
+                        <!-- OPTION A: News Item WITH a Picture -->
+<!--
+                        <div class="news-item">
+                            <div class="news-date">July 18, 2026</div>
+                            <div class="row g-3 align-items-start">
+                                
+                                <div class="col-md-8">
+                                    <h5 class="fw-bold text-dark">Exciting Image Update Here</h5>
+                                    <p class="text-muted">This is an example of a news update that includes an image banner. The Bootstrap grid cleanly splits the space on wider screens and stacks perfectly on mobile views.</p>
+                                </div>
+                                
+                                <div class="col-md-4">
+                                    <div class="news-img-wrapper">
+                                        <img src="news_pic1.jpg" class="news-img" alt="Description of the news image">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+-->
+                        <!-- OPTION B: Keep it the Current Way (Text Only) -->
+
                         <div class="news-item">
                             <div class="news-date">July 15, 2026</div>
                             <h5 class="fw-bold text-dark">Building Our Group Website</h5>
@@ -375,7 +427,7 @@
                             <p class="text-muted">We are honored to receive support from the National Key R&D Program of China. This recognition will enable us to further advance our research and in-operando synchrotron characterizations.</p>
                         </div>
                         <div class="news-item">
-                            <div class="news-date">May 31, 2026</div>
+                            <div class="news-date">May 23, 2026</div>
                             <h5 class="fw-bold text-dark">New Journey Begins</h5>
                             <p class="text-muted">New Journey.</p>
                         </div>
@@ -401,8 +453,8 @@
                             <img src="project1.jpg" class="project-img" alt="CrowdIA Visual Representation">
                         </div>
                         <div class="project-body">
-                            <h4 class="project-title">Cathode</h4>
-                            <p class="text-muted small">Developing advanced cathode materials, including Ni-rich layered oxide, Li- and Mn-rich cathode.</p>
+                            <h4 class="project-title">Cathode Materials</h4>
+                            <p class="text-muted small">We explore the structural and chemical evolution of high-energy-density layered oxide cathodes, including Ni-rich and Li- and Mn-rich materials, to reveal the fundamental mechanisms controlling energy density, degradation, and lifetime.</p>
                             <a href="#" class="btn btn-link text-decoration-none p-0 fw-semibold">View Publication <i class="fa-solid fa-arrow-right ms-1"></i></a>
                         </div>
                     </div>
@@ -413,8 +465,8 @@
                             <img src="project2.jpg" class="project-img" alt="Connect the Dots Analytics Dashboard">
                         </div>
                         <div class="project-body">
-                            <h4 class="project-title">Solid-state batteries</h4>
-                            <p class="text-muted small">Design solid-state battery systems.</p>
+                            <h4 class="project-title">Solid-State Batteries</h4>
+                            <p class="text-muted small">We investigate interfacial phenomena, device architectures, and degradation pathways in solid-state batteries through advanced characterization approaches to accelerate the development of next-generation energy storage technologies.</p>
                             <a href="#" class="btn btn-link text-decoration-none p-0 fw-semibold">Watch Video Demo <i class="fa-solid fa-arrow-right ms-1"></i></a>
                         </div>
                     </div>
@@ -425,8 +477,8 @@
                             <img src="project3.jpg" class="project-img" alt="HyperTuner interface">
                         </div>
                         <div class="project-body">
-                            <h4 class="project-title">Operando synchrotron techniques</h4>
-                            <p class="text-muted small">Developing and leveraging in-situ/operando synchrotron X-ray based characterizations for understanding structural evolutions inside cathode materials.</p>
+                            <h4 class="project-title">Synchrotron Techniques</h4>
+                            <p class="text-muted small">We create next-generation synchrotron characterization tools by combining advanced X-ray methodologies with self-developed algorithms and machine learning for automated discovery of materials processes across multiple length scales.</p>
                             <a href="#" class="btn btn-link text-decoration-none p-0 fw-semibold">View Case Study <i class="fa-solid fa-arrow-right ms-1"></i></a>
                         </div>
                     </div>
@@ -1274,38 +1326,63 @@
         <div class="container">
             <h2 class="section-title">Research Team</h2>
             <div class="row g-4 mt-2">
+                
+                <!-- Member 1 -->
                 <div class="col-md-6 col-lg-3">
                     <div class="team-card">
-                        <img src="profile.jpg" class="team-avatar" alt="Liguang Wang">
-                        <h5 class="team-name">Dr. Liguang Wang</h5>
-                        <p class="text-accent fw-semibold mb-1">Professor</p>
-                        <p class="text-muted small mb-0">Principal Investigator</p>
+                        <div class="team-img-wrapper">
+                            <img src="profile.jpg" class="team-avatar" alt="Dr. Liguang Wang">
+                        </div>
+                        <div class="team-info">
+                            <h5 class="team-name">Dr. Liguang Wang</h5>
+                            <p class="text-accent fw-semibold mb-1">Professor</p>
+                            <p class="text-muted small mb-0">Principal Investigator</p>
+                        </div>
                     </div>
                 </div>
+
+                <!-- Member 2 -->
                 <div class="col-md-6 col-lg-3">
                     <div class="team-card">
-                        <img src="student1.jpg" class="team-avatar" alt="Student 1">
-                        <h5 class="team-name">a hhh</h5>
-                        <p class="text-accent fw-semibold mb-1">Ph.D. Student</p>
-                        <p class="text-muted small mb-0">Imaging techniques & AI</p>
+                        <div class="team-img-wrapper">
+                            <img src="student1.jpg" class="team-avatar" alt="Student 1">
+                        </div>
+                        <div class="team-info">
+                            <h5 class="team-name">a hhh</h5>
+                            <p class="text-accent fw-semibold mb-1">Ph.D. Student</p>
+                            <p class="text-muted small mb-0">Imaging techniques & AI</p>
+                        </div>
                     </div>
                 </div>
+
+                <!-- Member 3 -->
                 <div class="col-md-6 col-lg-3">
                     <div class="team-card">
-                        <img src="student2.jpg" class="team-avatar" alt="Student 2">
-                        <h5 class="team-name">a hhh</h5>
-                        <p class="text-accent fw-semibold mb-1">Ph.D. Student</p>
-                        <p class="text-muted small mb-0">Cathode & Spectroscopy</p>
+                        <div class="team-img-wrapper">
+                            <img src="student2.jpg" class="team-avatar" alt="Student 2">
+                        </div>
+                        <div class="team-info">
+                            <h5 class="team-name">a hhh</h5>
+                            <p class="text-accent fw-semibold mb-1">Ph.D. Student</p>
+                            <p class="text-muted small mb-0">Cathode & Spectroscopy</p>
+                        </div>
                     </div>
                 </div>
+
+                <!-- Member 4 -->
                 <div class="col-md-6 col-lg-3">
                     <div class="team-card">
-                        <img src="student3.jpg" class="team-avatar" alt="Student 3">
-                        <h5 class="team-name">a hhh</h5>
-                        <p class="text-accent fw-semibold mb-1">M.S. Student</p>
-                        <p class="text-muted small mb-0">Cathode & Diffraction</p>
+                        <div class="team-img-wrapper">
+                            <img src="student3.jpg" class="team-avatar" alt="Student 3">
+                        </div>
+                        <div class="team-info">
+                            <h5 class="team-name">a hhh</h5>
+                            <p class="text-accent fw-semibold mb-1">M.S. Student</p>
+                            <p class="text-muted small mb-0">Cathode & Diffraction</p>
+                        </div>
                     </div>
                 </div>
+
             </div>
         </div>
     </main>
