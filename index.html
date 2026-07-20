@@ -380,7 +380,7 @@
         </div>
     </nav>
 
-    <main id="about" class="page-content fade-in d-none">
+    <main id="about" class="page-content fade-in">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-4 text-center mb-5 mb-lg-0">
@@ -1528,6 +1528,7 @@
 
     <script>
         function runRouter() {
+            // Default to #about if hash is empty or invalid
             const currentHash = window.location.hash || '#about';
             const pages = ['#about', '#news', '#projects', '#publications', '#team'];
             
@@ -1536,15 +1537,16 @@
                 if (element) {
                     if (pageId === currentHash) {
                         element.classList.remove('d-none');
+                        element.style.display = 'block';
                     } else {
-                        element.classList.add('d-none');
+                        element.style.display = 'none';
                     }
                 }
             });
 
             document.querySelectorAll('.nav-link').forEach(link => {
-                const hrefAttribute = link.getAttribute('href');
-                if (hrefAttribute === currentHash) {
+                //const hrefAttribute = link.getAttribute('href');
+                if (link.getAttribute('href') === currentHash) {
                     link.classList.add('active');
                 } else {
                     link.classList.remove('active');
@@ -1553,6 +1555,9 @@
 
             window.scrollTo(0, 0);
         }
+
+        window.addEventListener('hashchange', runRouter);
+        window.addEventListener('DOMContentLoaded', runRouter);
 
 
         /* Publication Dropdown Filter Function */
