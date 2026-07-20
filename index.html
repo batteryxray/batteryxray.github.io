@@ -310,6 +310,37 @@
             color: #94a3b8;
         }
 
+        /* Publication Year Filter Buttons */
+        .year-filter-btn {
+            background-color: #ffffff;
+            color: var(--primary-color);
+            border: 1px solid #cbd5e1;
+            border-radius: 20px;
+            padding: 5px 15px;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all var(--transition-speed) ease;
+        }
+
+        .year-filter-btn:hover, .year-filter-btn.active {
+            background-color: var(--primary-color);
+            color: #ffffff;
+            border-color: var(--primary-color);
+        }
+
+        /* Custom Styling for Publication Dropdown */
+        .form-select {
+            border-color: #cbd5e1;
+            color: var(--primary-color);
+            font-weight: 600;
+            border-radius: 8px;
+        }
+
+        .form-select:focus {
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 0.25rem rgba(42, 111, 151, 0.2);
+        }
+
         /* Footer */
         footer {
             background-color: #ffffff;
@@ -364,7 +395,7 @@
                 </div>
                 <div class="col-lg-8">
                     <span class="text-uppercase tracking-wider fw-bold text-muted small">Zhejiang University</span>
-                    <h1 class="bio-title mb-3">Liguang Wang</h1>
+                    <h1 class="bio-title mb-3">Liguang Wang (王利光)</h1>
                     <p class="lead text-muted mb-4">Ph.D. • Professor • Battery materials & Synchrotron techniques</p>
                     <p class="mb-3">
                         Welcome to our research group! 
@@ -373,7 +404,7 @@
                         Our group focuses on developing advanced synchrotron X-ray imaging and spectroscopy techniques to reveal how energy materials evolve structurally and chemically under realistic operating conditions. By combining cutting-edge synchrotron instrumentation with quantitative imaging and spectroscopy approaches, we aim to uncover the fundamental mechanisms that govern the performance, degradation, and transformation of batteries and other electrochemical energy systems. 
                     </p>
                     <p class="mb-3">
-                        Our research integrates a range of advanced characterization methods, including transmission X-ray microscopy (TXM), nano-computed tomography (nano-CT), and two- and three-dimensional X-ray absorption near-edge structure (2D/3D XANES) mapping. These techniques enable us to visualize and quantify structural, chemical, and electrochemical transformations across multiple length scales, providing new insights into the complex processes that control energy storage and conversion materials. 
+                        Our research integrates a range of advanced characterization methods, particularly transmission X-ray microscopy (TXM), nano-computed tomography (nano-CT), and two- and three-dimensional X-ray absorption near-edge structure (2D/3D XANES) mapping. These techniques enable us to visualize and quantify structural, chemical, and electrochemical transformations across multiple length scales, providing new insights into the complex processes that control energy storage and conversion materials. 
                     </p>
                     <p class="mb-3">
                         Building on extensive expertise in synchrotron instrumentation and beamline development at the Advanced Photon Source (APS), Argonne National Laboratory (ANL), our group is committed to advancing next-generation characterization methodologies while addressing critical challenges in sustainable energy technologies. 
@@ -394,27 +425,6 @@
             <div class="row">
                 <div class="col-lg-10 col-xl-8">
                     <div class="news-timeline">
-                        
-                        <!-- OPTION A: News Item WITH a Picture -->
-<!--
-                        <div class="news-item">
-                            <div class="news-date">July 18, 2026</div>
-                            <div class="row g-3 align-items-start">
-                                
-                                <div class="col-md-8">
-                                    <h5 class="fw-bold text-dark">Exciting Image Update Here</h5>
-                                    <p class="text-muted">This is an example of a news update that includes an image banner. The Bootstrap grid cleanly splits the space on wider screens and stacks perfectly on mobile views.</p>
-                                </div>
-                                
-                                <div class="col-md-4">
-                                    <div class="news-img-wrapper">
-                                        <img src="news_pic1.jpg" class="news-img" alt="Description of the news image">
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
--->
-                        <!-- OPTION B: Keep it the Current Way (Text Only) -->
 
                         <div class="news-item">
                             <div class="news-date">July 15, 2026</div>
@@ -491,11 +501,34 @@
         <div class="container">
             <h2 class="section-title">Publications</h2>
             
+            <!-- Year Filter Dropdown -->
+            <div class="row mb-4 align-items-center">
+                <div class="col-auto">
+                    <label for="yearSelect" class="col-form-label fw-bold text-secondary">Filter by Year:</label>
+                </div>
+                <div class="col-auto" style="min-width: 160px;">
+                    <select id="yearSelect" class="form-select" onchange="filterYearDropdown(this.value)">
+                        <option value="all" selected>All Years</option>
+                        <option value="2026">2026</option>
+                        <option value="2025">2025</option>
+                        <option value="2024">2024</option>
+                        <option value="2023">2023</option>
+                        <option value="2022">2022</option>
+                        <option value="2021">2021</option>
+                        <option value="2020">2020</option>
+                        <option value="2019">2019</option>
+                        <option value="2018">2018</option>
+                        <option value="2017">2017</option>
+                        <option value="2015">2015</option>
+                    </select>
+                </div>
+            </div>
+
             <div class="row mt-2">
                 <div class="col-lg-12">
 
                     <!-- =================== 2026 =================== -->
-                    <div class="year-section">
+                    <div class="year-section" data-year="2026">
                         <h3 class="year-heading">2026</h3>
 
                         <div class="pub-card">
@@ -587,6 +620,7 @@
                             <div class="pub-authors">Zhang, Guangxiang; Fu, Chuankai; Li, Shuai; Zhu, Ruichen; Ma, Chi; Yan, Jiaxin; Liu, Ziwei; Niu, Yuxiang; Huo, Hua; Du, Chunyu; <span class="author-self">Wang, Liguang*</span>; Gao, Yunzhi; Yin, Geping; Chen,Wei; Ma, Yulin</div>
                             <div class="pub-meta"><span class="journal-bold">Energy Storage Materials</span> (2026)</div>
                         </div>
+
                         <div class="pub-card">
                             <h5 class="pub-title">Harmonized sodium coordination engineering for high-energy phosphate cathodes</h5>
                             <div class="pub-authors">Xinyu Li, Duoduo Zhang, Xiangfeng Fan, Lina Gao, Weixin Chen, <span class="author-self">Liguang Wang</span>, Ruiguo Cao, Shuhong Jiao, Yang Sun, Hao Guo, et al.</div>
@@ -601,7 +635,7 @@
                     </div>
 
                     <!-- =================== 2025 =================== -->
-                    <div class="year-section">
+                    <div class="year-section" data-year="2025">
                         <h3 class="year-heading">2025</h3>
 
                         <div class="pub-card">
@@ -657,21 +691,25 @@
                             <div class="pub-authors">Wang, Yuanheng; Yan, Jiaxin; Xie, Bingxing; Meng, Yan; Fu, Chuankai; Kong, Fanpeng; Wang, Xingyu; Zhou, Qingjie; Chen, Xin; Li, Jianting; Du, Chunyu; <span class="author-self">Wang, Liguang*</span>; Zuo, Pengjian</div>
                             <div class="pub-meta"><span class="journal-bold">Nature Communications</span>, Vol. 16, No. 1, pp. 10083 (2025)</div>
                         </div>
+
                         <div class="pub-card">
                             <h5 class="pub-title">Pre-Lithiation and Continuous Lithium Compensation Technologies for Advanced Lithium-Ion Batteries</h5>
                             <div class="pub-authors">Huang, Wang; Zhu, Yupeng; Ma, Yulin; Huo, Hua; Zuo, Pengjian; Du, Chunyu; Yin, Geping; Yu, Yikang; Li, Siyuan; Chen, Wei; <span class="author-self">Wang, Liguang*</span>; Fu, Chuankai</div>
                             <div class="pub-meta"><span class="journal-bold">EcoEnergy</span>, Vol. 3, No. 4, pp. e70016 (2025)</div>
                         </div>
+
                         <div class="pub-card">
                             <h5 class="pub-title">Inhibiting inter-layer gliding in transition metal layered oxides through interphase engineering for sodium-ion batteries</h5>
                             <div class="pub-authors">Xing Zhou, Yang Chao, Xiaowei Liu, Xin Peng, Yongyuan Zhou, <span class="author-self">Liguang Wang</span>, Tongchao Liu, Ya You, Jun Lu</div>
                             <div class="pub-meta"><span class="journal-bold">Nature Communications</span> (2025)</div>
                         </div>
+
                         <div class="pub-card">
                             <h5 class="pub-title">Enhanced specific energy in fast-charging lithium-ion batteries negative electrodes via Ti-O covalency-mediated low potential</h5>
                             <div class="pub-authors">Jun Huang, Qirui Yang, Anyi Hu, Liao Zhu, Zhengxi Zhang, Qinfeng Zheng, Zhouhong Ren, Shun Zheng, Yixiao Zhang, Xiaolong Yang, <span class="author-self">Liguang Wang</span>, et al.</div>
                             <div class="pub-meta"><span class="journal-bold">Nature Communications</span> (2025)</div>
                         </div>
+
                         <div class="pub-card">
                             <h5 class="pub-title">Resonant inelastic X-ray scattering for studying materials for renewable energy conversion and storage</h5>
                             <div class="pub-authors">Rongfu Hong, Lixin Xing, Mingjie Wu, Zhangsen Chen, Ning Wang, Ling Meng, Siyu Ye, <span class="author-self">Liguang Wang</span>, Gaixia Zhang, Lei Du</div>
@@ -695,11 +733,10 @@
                             <div class="pub-authors">Zhiyin Huang, Yuqin Peng, Lixin Xing, Mijia Xu, Meng Fang, Huiqi Xie, Jiamin Li, Yangdong Zhou, Puwei Wu, Ning Wang, <span class="author-self">Liguang Wang*</span>, Siyu Ye, Lei Du.</div>
                             <div class="pub-meta"><span class="journal-bold">Applied Catalysis B: Environment and Energy</span> (2025)</div>
                         </div>
-
                     </div>
 
                     <!-- =================== 2024 =================== -->
-                    <div class="year-section">
+                    <div class="year-section" data-year="2024">
                         <h3 class="year-heading">2024</h3>
 
                         <div class="pub-card">
@@ -812,7 +849,7 @@
                     </div>
 
                     <!-- =================== 2023 =================== -->
-                    <div class="year-section">
+                    <div class="year-section" data-year="2023">
                         <h3 class="year-heading">2023</h3>
 
                         <div class="pub-card">
@@ -941,11 +978,10 @@
                             <div class="pub-authors">Lifan Wang, Guicheng Liu, Rui Wang, Xindong Wang, <span class="author-self">Liguang Wang</span>, Zhenpeng Yao, Chun Zhan, Jun Lu</div>
                             <div class="pub-meta"><span class="journal-bold">Advanced Materials</span> (2023)</div>
                         </div>
-
                     </div>
 
                     <!-- =================== 2022 =================== -->
-                    <div class="year-section">
+                    <div class="year-section" data-year="2022">
                         <h3 class="year-heading">2022</h3>
 
                         <div class="pub-card">
@@ -1007,11 +1043,10 @@
                             <div class="pub-authors">Hongyin Xia, Xiliang Zheng, Jing Li, <span class="author-self">Liguang Wang</span>, Yuan Xue, Chao Peng, Yanchao Han, Ying Wang, Shaojun Guo, Jin Wang, et al.</div>
                             <div class="pub-meta"><span class="journal-bold">Journal of the American Chemical Society</span> (2022)</div>
                         </div>
-
                     </div>
 
                     <!-- =================== 2021 =================== -->
-                    <div class="year-section">
+                    <div class="year-section" data-year="2021">
                         <h3 class="year-heading">2021</h3>
 
                         <div class="pub-card">
@@ -1079,11 +1114,10 @@
                             <div class="pub-authors">Yongjin Fang, Qi Liu, Xiangming Feng, Weihua Chen, Xinping Ai, <span class="author-self">Liguang Wang</span>, Liang Wang, Zhiyuan Ma, Yang Ren, Hanxi Yang, et al.</div>
                             <div class="pub-meta"><span class="journal-bold">Journal of Energy Chemistry</span> (2021)</div>
                         </div>
-
                     </div>
 
                     <!-- =================== 2020 =================== -->
-                    <div class="year-section">
+                    <div class="year-section" data-year="2020">
                         <h3 class="year-heading">2020</h3>
 
                         <div class="pub-card">
@@ -1170,11 +1204,10 @@
                             <div class="pub-authors">Jin-Cheng Li, Hong Zhong, Mingjie Xu, Tao Li, <span class="author-self">Liguang Wang</span>, Qiurong Shi, Shuo Feng, Zhaoyuan Lyu, Dong Liu, Dan Du, et al.</div>
                             <div class="pub-meta"><span class="journal-bold">Science China Materials</span> (2020)</div>
                         </div>
-
                     </div>
 
                     <!-- =================== 2019 =================== -->
-                    <div class="year-section">
+                    <div class="year-section" data-year="2019">
                         <h3 class="year-heading">2019</h3>
 
                         <div class="pub-card">
@@ -1230,11 +1263,10 @@
                             <div class="pub-authors">Shaobo Ma, <span class="author-self">Liguang Wang</span>, Yang Wang, Pengjian Zuo, Mengxue He, Han Zhang, Lu Ma, Tianpin Wu, Geping Yin</div>
                             <div class="pub-meta"><span class="journal-bold">Carbon</span> (2019)</div>
                         </div>
-
                     </div>
 
                     <!-- =================== 2018 =================== -->
-                    <div class="year-section">
+                    <div class="year-section" data-year="2018">
                         <h3 class="year-heading">2018</h3>
 
                         <div class="pub-card">
@@ -1266,11 +1298,10 @@
                             <div class="pub-authors">Jinpeng Wang, Guokang Han, <span class="author-self">Liguang Wang</span>, Lei Du, Guangyu Chen, Yunzhi Gao, Yulin Ma, Chunyu Du, Xinqun Cheng, Pengjian Zuo, et al.</div>
                             <div class="pub-meta"><span class="journal-bold">Small</span> (2018)</div>
                         </div>
-
                     </div>
 
                     <!-- =================== 2017 =================== -->
-                    <div class="year-section">
+                    <div class="year-section" data-year="2017">
                         <h3 class="year-heading">2017</h3>
 
                         <div class="pub-card">
@@ -1290,11 +1321,10 @@
                             <div class="pub-authors">Jiajun Wang, <span class="author-self">Liguang Wang</span>, Christopher Eng, Jun Wang</div>
                             <div class="pub-meta"><span class="journal-bold">Advanced Energy Materials</span> (2017)</div>
                         </div>
-
                     </div>
 
                     <!-- =================== 2015 =================== -->
-                    <div class="year-section">
+                    <div class="year-section" data-year="2015">
                         <h3 class="year-heading">2015</h3>
 
                         <div class="pub-card">
@@ -1443,7 +1473,7 @@
                 <div class="col-md-6 col-lg-3">
                     <div class="team-card">
                         <div class="team-img-wrapper">
-                            <img src="student1.jpg" class="team-avatar" alt="Student 9">
+                            <img src="xueyan.jpg" class="team-avatar" alt="Student 9">
                         </div>
                         <div class="team-info">
                             <h5 class="team-name">Dr. Xueyan Zhang</h5>
@@ -1457,7 +1487,7 @@
                 <div class="col-md-6 col-lg-3">
                     <div class="team-card">
                         <div class="team-img-wrapper">
-                            <img src="student1.jpg" class="team-avatar" alt="Student 10">
+                            <img src="lixiaopeng.jpg" class="team-avatar" alt="Student 10">
                         </div>
                         <div class="team-info">
                             <h5 class="team-name">Dr. Xiaopeng Li</h5>
@@ -1467,7 +1497,7 @@
                     </div>
                 </div>
 
-                <!-- Member 10 -->
+                <!-- Member 11 -->
                 <div class="col-md-6 col-lg-3">
                     <div class="team-card">
                         <div class="team-img-wrapper">
@@ -1522,6 +1552,20 @@
             });
 
             window.scrollTo(0, 0);
+        }
+
+
+        /* Publication Dropdown Filter Function */
+        function filterYearDropdown(selectedYear) {
+            const yearSections = document.querySelectorAll('.year-section');
+            yearSections.forEach(section => {
+                const sectionYear = section.getAttribute('data-year');
+                if (selectedYear === 'all' || sectionYear === selectedYear) {
+                    section.style.display = 'block';
+                } else {
+                    section.style.display = 'none';
+                }
+            });
         }
 
         window.addEventListener('hashchange', runRouter);
