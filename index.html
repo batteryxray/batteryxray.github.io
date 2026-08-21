@@ -40,21 +40,48 @@
             box-shadow: 0 1px 3px rgba(0, 0, 0, 0.02);
         }
 
-        /* Top Navigation Header Brand & Logo */
+        /* Combined Header Logos (Top-Left) */
         .navbar-brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
             font-family: 'Playfair Display', serif;
             font-weight: 700;
             color: var(--primary-color) !important;
             font-size: 1.45rem;
-            display: flex;
-            align-items: center;
-            gap: 12px; /* Adds space between the logo image and the text */
+            text-decoration: none;
         }
 
+        /* Group Logo */
         .navbar-logo {
-            height: 45px; /* Adjust height to match your logo's proportions */
-            width: auto;  /* Maintains proper aspect ratio without distortion */
+            height: 45px;
+            width: auto;
             object-fit: contain;
+        }
+
+        /* Vertical Divider Between Logos */
+        .brand-divider {
+            height: 28px;
+            width: 1px;
+            background-color: #cbd5e1; /* Subtle slate gray line */
+            margin: 0 4px;
+        }
+
+        /* University Logo */
+        .univ-logo {
+            height: 55px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        /* Adjust alignment for mobile screens */
+        @media (max-width: 991px) {
+            .univ-logo-wrapper {
+                margin-left: 0;
+                margin-top: 15px;
+                padding-left: 0;
+                border-left: none;
+            }
         }
 
         .nav-link {
@@ -374,23 +401,31 @@
 
     <nav class="navbar navbar-expand-lg navbar-light sticky-top">
         <div class="container">
-            <!-- Brand Logo + Name -->
+            <!-- Group Logo + University logo + Name -->
             <a class="navbar-brand" href="#about">
+                
+                <!-- University logo -->
+                <img src="univ_logo.png" alt="University Logo" class="univ-logo">
+                <span class="brand-divider"></span>
+
+                <!-- Group logo -->
                 <img src="logowhite.png" alt="Wang Group Logo" class="navbar-logo">
-                <span>Wang Group</span>
+
+                <span class="ms-1">Xplore-energy Group</span>
             </a>
 
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav ms-auto align-items-center">
                     <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="#news">News</a></li>
                     <li class="nav-item"><a class="nav-link" href="#projects">Research</a></li>
                     <li class="nav-item"><a class="nav-link" href="#publications">Publications</a></li>
                     <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
                 </ul>
+
             </div>
         </div>
     </nav>
@@ -601,7 +636,7 @@
                         <div class="pub-card">
                             <h5 class="pub-title">Iron-mediated reversible lattice-oxygen redox enables stable 200 Wh Kg-1 sodium-ion batteries</h5>
                             <div class="pub-authors">Chu, Shiyong#; <span class="author-self">Wang, Liguang#</span>; Bian, Jingjing#; Cheng, Chen; Tian, Jiaming; Sheng, Chuanchao; Zhou, Zengqing; Shi, Tianze; Guo, Jinghua; Zhang, Liang; Lu, Jun; Zhou, Haoshen; Guo, Shaohua</div>
-                            <div class="pub-meta"><span class="journal-bold">Nature Energy</span>, (2026), accepted</div>
+                            <div class="pub-meta"><span class="journal-bold">Nature Energy</span>, (2026), https://doi.org/10.1038/s41560-026-02112-8</div>
                         </div>
 
                         <div class="pub-card">
