@@ -138,6 +138,41 @@
             margin-bottom: 25px;
         }
 
+        /* Large Highlighted Works Showcase Carousel Styles */
+        .showcase-carousel-wrapper {
+            margin-top: 50px;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.06);
+            background: #f8fafc; /* Clean light background for padding space */
+            border: 1px solid #e2e8f0;
+        }
+
+        .showcase-carousel-wrapper .carousel-inner {
+            height: 400px; /* Fixed display box height */
+        }
+
+        .carousel-item {
+            height: 100%;
+        }
+
+        .showcase-img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* Ensures the entire image fits inside the box without cropping */
+            background-color: #0f172a; /* Dark background to neatly frame illustrations/figures */
+        }
+
+        .carousel-caption-custom {
+            background: rgba(27, 42, 71, 0.85); /* Matches your --primary-color */
+            padding: 12px 20px;
+            border-radius: 8px;
+            bottom: 15px;
+            left: 20px;
+            right: 20px;
+            text-align: left;
+        }
+
         .bio-title {
             font-family: 'Playfair Display', serif;
             font-weight: 700;
@@ -405,7 +440,7 @@
             <a class="navbar-brand" href="#about">
                 
                 <!-- University logo -->
-                <img src="univ_logo.png" alt="University Logo" class="univ-logo">
+                <img src="univ_logo.jpg" alt="University Logo" class="univ-logo">
                 <span class="brand-divider"></span>
 
                 <!-- Group logo -->
@@ -466,6 +501,72 @@
                     </div>
                 </div>
             </div>
+
+            <!-- NEW: Large Auto-Scrolling Highlights Showcase at the Bottom of Home Page -->
+            <div class="row mt-5 pt-4">
+                <div class="col-12">
+                    <h3 class="fw-bold text-dark mb-4 text-center" style="font-family: 'Playfair Display', serif;">Highlights</h3>
+                    <div class="showcase-carousel-wrapper">
+                        <div id="highlightedWorksCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#highlightedWorksCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#highlightedWorksCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                <button type="button" data-bs-target="#highlightedWorksCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                <button type="button" data-bs-target="#highlightedWorksCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                            </div>
+                            <div class="carousel-inner">
+                                
+                                <!-- Slide 1 -->
+                                <div class="carousel-item active">
+                                    <img src="highlight1.jpg" class="d-block showcase-img" alt="Highlighted Work 1">
+                                    <div class="carousel-caption d-none d-md-block carousel-caption-custom">
+                                        <h5 class="fw-bold mb-1 text-white">Novel Cathode Stablization Strategy -- Nature</h5>
+                                        <p class="small mb-0 text-light">Stabilizing Ni-rich layered cathodes via a coherent perovskite phase strategy. Published in <em>Nature</em>.</p>
+                                    </div>
+                                </div>
+
+                                <!-- Slide 2 -->
+                                <div class="carousel-item">
+                                    <img src="highlight2.jpg" class="d-block showcase-img" alt="Highlighted Work 2">
+                                    <div class="carousel-caption d-none d-md-block carousel-caption-custom">
+                                        <h5 class="fw-bold mb-1 text-white">Multimodal Synchrotron Techniques for Battery Materials</h5>
+                                        <p class="small mb-0 text-light">Highlighting our advanced studies on probing battery materials via multimodal synchrotron characterization.</p>
+                                    </div>
+                                </div>
+
+                                <!-- Slide 3 -->
+                                <div class="carousel-item">
+                                    <img src="highlight3.jpg" class="d-block showcase-img" alt="Highlighted Work 3">
+                                    <div class="carousel-caption d-none d-md-block carousel-caption-custom">
+                                        <h5 class="fw-bold mb-1 text-white">Principles of 2D TXM-XANES Chemical Mapping</h5>
+                                        <p class="small mb-0 text-light">Unlocking advanced synchrotron imaging principles for quantitative 2D transmission X-ray microscopy and XANES mapping.</p>
+                                    </div>
+                                </div>
+
+                                <!-- Slide 4 -->
+                                <div class="carousel-item">
+                                    <img src="highlight4.jpg" class="d-block showcase-img" alt="Highlighted Work 4">
+                                    <div class="carousel-caption d-none d-md-block carousel-caption-custom">
+                                        <h5 class="fw-bold mb-1 text-white">In-House Developed Analysis Algorithms</h5>
+                                        <p class="small mb-0 text-light">Advanced characterization tools empowered by custom automated algorithms and machine learning.</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#highlightedWorksCarousel" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#highlightedWorksCarousel" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- End of Showcase Section -->
+
         </div>
     </main>
 
