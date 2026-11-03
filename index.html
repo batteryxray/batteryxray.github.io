@@ -3,13 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Liguang Wang | Research Group</title>
+    <title>Liguang Wang | Xplore-energy Lab</title>
+    <meta name="description" content="Xplore-energy Lab, Zhejiang University: synchrotron X-ray imaging and spectroscopy (TXM, nano-CT, XANES) for battery and energy materials.">
+    <meta name="theme-color" content="#1b2a47">
+    <link rel="icon" href="univ_logo.jpg">
+    <meta property="og:title" content="Xplore-energy Lab | Liguang Wang, Zhejiang University">
+    <meta property="og:description" content="Synchrotron imaging and spectroscopy of battery and energy materials.">
+    <meta property="og:type" content="website">
     
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;display=swap" rel="stylesheet" media="print" onload="this.media=\'all\'">
+    <noscript><link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&amp;family=Playfair+Display:ital,wght@0,400..900;1,400..900&amp;display=swap" rel="stylesheet"></noscript>
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 
@@ -430,42 +437,106 @@
             from { opacity: 0; transform: translateY(8px); }
             to { opacity: 1; transform: translateY(0); }
         }
+
+        /* ====== Enhancements (v2) ====== */
+        :root { --accent-soft:#e8f1f7; --line:#e2e8f0; --muted:#64748b; --nav-h:84px; }
+        html { scroll-behavior:smooth; }
+        body { font-family:'DM Sans',system-ui,-apple-system,'Segoe UI','PingFang SC','Microsoft YaHei',sans-serif; line-height:1.65; }
+        .navbar-brand, .section-title, .bio-title, .project-title, .year-heading, .group-title { font-family:'Playfair Display',Georgia,'Songti SC',serif; }
+        .skip-link { position:absolute; left:-999px; top:8px; background:var(--primary-color); color:#fff; padding:8px 14px; border-radius:6px; z-index:3000; }
+        .skip-link:focus { left:8px; color:#fff; }
+        :focus-visible { outline:3px solid rgba(42,111,151,.55); outline-offset:2px; }
+        .text-accent { color:var(--accent-color); }
+
+        .navbar { background-color:rgba(255,255,255,.93) !important; backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); }
+        .nav-link { position:relative; margin-left:8px; }
+        .nav-link.active { background:transparent; }
+        .nav-link.active::after { content:""; position:absolute; left:12px; right:12px; bottom:2px; height:2px; background:var(--accent-color); border-radius:2px; }
+        @media (max-width:991px){ .nav-link{margin-left:0;} .navbar-brand{font-size:1.1rem;} .univ-logo{height:42px;} .navbar-logo{height:34px;} }
+        @media (max-width:420px){ .navbar-brand .brand-text{display:none;} }
+
+        .page-content { padding:56px 0 72px; }
+        .hero { background:radial-gradient(900px 380px at 90% -5%, var(--accent-soft), transparent 65%); }
+        .profile-img { border-radius:50%; box-shadow:0 0 0 1px var(--line), 0 10px 30px rgba(27,42,71,.12); }
+        .bio-title { font-size:clamp(2rem,4.5vw,2.7rem); line-height:1.15; }
+        .chip { display:inline-block; padding:4px 12px; margin:0 6px 8px 0; border-radius:999px; background:var(--accent-soft); color:var(--accent-color); font-size:.82rem; font-weight:600; }
+        .join-card { background:#fff; border:1px solid var(--line); border-left:4px solid var(--accent-color); border-radius:12px; padding:18px 22px; box-shadow:0 4px 12px rgba(0,0,0,.03); }
+        .btn-accent { background:var(--accent-color); color:#fff; border:0; border-radius:8px; font-weight:600; }
+        .btn-accent:hover { background:var(--primary-color); color:#fff; }
+
+        .section-head { margin-bottom:36px; }
+        .section-head .section-title { margin-bottom:0; }
+        .section-lead { color:var(--muted); margin:22px 0 0; max-width:680px; }
+
+        .showcase-carousel-wrapper .carousel-inner { height:clamp(240px,48vw,460px); }
+        .carousel-caption-custom { backdrop-filter:blur(4px); }
+
+        .news-extra-btn { margin-left:30px; }
+        .project-card, .team-card, .pub-card { border-color:var(--line); }
+        .project-card .project-link { color:var(--accent-color); text-decoration:none; font-weight:600; }
+        .project-card .project-link:hover { color:var(--primary-color); }
+
+        .team-group { margin-bottom:48px; }
+        .group-title { font-size:1.35rem; color:var(--primary-color); border-bottom:2px solid var(--line); padding-bottom:8px; margin-bottom:22px; }
+        .team-avatar { aspect-ratio:4/5; object-fit:cover; object-position:center top; }
+        .team-name { font-weight:700; color:var(--primary-color); font-size:1.05rem; margin-bottom:2px; }
+
+        .pub-toolbar { position:sticky; top:var(--nav-h); z-index:50; background:rgba(250,249,246,.96); backdrop-filter:blur(6px); padding:12px 0; margin-bottom:24px; border-bottom:1px solid var(--line); }
+        .pub-card { border-left:3px solid transparent; }
+        .pub-card:hover { border-left-color:var(--accent-color); }
+        .pub-title { font-weight:600; }
+        .year-count { font-family:'DM Sans',sans-serif; font-size:.8rem; font-weight:600; color:var(--accent-color); background:var(--accent-soft); border-radius:999px; padding:2px 10px; margin-left:10px; vertical-align:middle; }
+
+        footer { padding:28px 0; }
+        #toTop { position:fixed; right:20px; bottom:20px; width:44px; height:44px; border-radius:50%; border:0; background:var(--primary-color); color:#fff; box-shadow:0 6px 16px rgba(0,0,0,.2); opacity:0; pointer-events:none; transition:opacity .25s; z-index:1000; }
+        #toTop.show { opacity:1; pointer-events:auto; }
+        @media (prefers-reduced-motion:reduce){ *{animation:none !important; transition:none !important;} html{scroll-behavior:auto;} }
+
+        /* ====== v3 tweaks ====== */
+        .showcase-carousel-wrapper { margin-top:0; }
+        .showcase-carousel-wrapper .carousel-inner { height:clamp(220px,38vw,380px); }
+        .more-toggle { display:inline-block; font-weight:600; color:var(--accent-color); text-decoration:none; margin-bottom:6px; }
+        .more-toggle:hover { color:var(--primary-color); }
+        .more-toggle .when-open, .more-toggle[aria-expanded="true"] .when-closed { display:none; }
+        .more-toggle[aria-expanded="true"] .when-open { display:inline; }
+        .more-toggle[aria-expanded="true"] i { transform:rotate(180deg); }
+        .navbar-brand { font-size:1.2rem; }
+        .group-title { font-family:'DM Sans',system-ui,sans-serif; font-size:.9rem; font-weight:700; letter-spacing:.1em; text-transform:uppercase; color:var(--accent-color); padding-bottom:6px; margin-bottom:18px; }
+        @media (max-width:991px){ .navbar-brand{font-size:1.05rem;} }
+
+        /* ====== v4: Highlights on Research page ====== */
+        .subhead { font-family:'Playfair Display',Georgia,'Songti SC',serif; font-weight:700; font-size:1.5rem; color:var(--primary-color); margin:0 0 18px; }
+        .showcase-carousel-wrapper .carousel-inner { height:clamp(240px,44vw,440px); }
     </style>
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+    <a class="skip-link" href="#main">Skip to content</a>
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top" aria-label="Main navigation">
         <div class="container">
-            <!-- Group Logo + University logo + Name -->
             <a class="navbar-brand" href="#about">
-                
-                <!-- University logo -->
-                <img src="univ_logo.jpg" alt="University Logo" class="univ-logo">
+                <img src="univ_logo.jpg" alt="Zhejiang University logo" class="univ-logo">
                 <span class="brand-divider"></span>
-
-                <!-- Group logo -->
-                <img src="logowhite.png" alt="Wang Group Logo" class="navbar-logo">
-
-                <span class="ms-1">Xplore-energy Lab</span>
+                <img src="logowhite.png" alt="Xplore-energy Lab logo" class="navbar-logo">
+                <span class="ms-1 brand-text">Xplore-energy Lab</span>
             </a>
-
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto align-items-center">
+                <ul class="navbar-nav ms-auto align-items-lg-center">
                     <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
                     <li class="nav-item"><a class="nav-link" href="#news">News</a></li>
                     <li class="nav-item"><a class="nav-link" href="#projects">Research</a></li>
                     <li class="nav-item"><a class="nav-link" href="#publications">Publications</a></li>
                     <li class="nav-item"><a class="nav-link" href="#team">Team</a></li>
                 </ul>
-
             </div>
         </div>
     </nav>
 
-    <main id="about" class="page-content fade-in">
+    <main id="main">
+    <section id="about" class="page page-content fade-in hero">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-lg-4 text-center mb-5 mb-lg-0">
@@ -474,105 +545,50 @@
                     </div>
                     <div class="d-flex justify-content-center gap-2">
                         <a href="mailto:wanglg@zju.edu.cn" class="btn btn-sm social-btn"><i class="fa-regular fa-envelope me-1"></i> Email</a>
-                        <a href="https://scholar.google.com/citations?user=iT0dJ5MAAAAJ&hl=en" target="_blank" rel="noopener noreferrer" class="btn btn-sm social-btn"><i class="fa-solid fa-graduation-cap me-1"></i> Scholar</a>
+                        <a href="https://scholar.google.com/citations?user=iT0dJ5MAAAAJ&amp;hl=en" target="_blank" rel="noopener noreferrer" class="btn btn-sm social-btn"><i class="fa-solid fa-graduation-cap me-1"></i> Scholar</a>
                         <a href="https://person.zju.edu.cn/wanglg" target="_blank" rel="noopener noreferrer" class="btn btn-sm social-btn"><i class="fa-solid fa-house me-1"></i> Home</a>
                     </div>
                 </div>
                 <div class="col-lg-8">
-                    <span class="text-uppercase tracking-wider fw-bold text-muted small">Zhejiang University</span>
+                    <span class="text-uppercase fw-bold text-muted small" style="letter-spacing:.12em">Zhejiang University</span>
                     <h1 class="bio-title mb-3">Liguang Wang (王利光)</h1>
-                    <p class="lead text-muted mb-4">Ph.D. • Professor • Battery materials & Synchrotron techniques</p>
+                    <p class="lead text-muted mb-4">Ph.D. • Professor • Battery materials &amp; Synchrotron techniques</p>
+                    <div class="mb-4" aria-label="Research keywords">
+                        <span class="chip">Imaging techniques (2D/3D TXM-XANES, CT, BCDI)</span><span class="chip">Diffraction &amp; Spectroscopy</span><span class="chip">Cathodes</span><span class="chip">Solid-state batteries</span><span class="chip">Machine learning</span>
+                    </div>
                     <p class="mb-3">
                         <strong>Welcome to our research group! </strong>
                     </p>
                     <p class="mb-3">
                         Our group focuses on developing advanced <strong>synchrotron X-ray imaging and spectroscopy techniques</strong> to reveal how energy materials evolve structurally and chemically under realistic operating conditions. By combining cutting-edge synchrotron instrumentation with quantitative imaging and spectroscopy approaches, we aim to uncover the fundamental mechanisms that govern <strong>the performance, degradation, and transformation of batteries and other electrochemical energy systems</strong>. 
                     </p>
+                    <div class="collapse" id="moreAbout">
                     <p class="mb-3">
                         Our research integrates a range of advanced characterization methods, particularly transmission X-ray microscopy (TXM), nano-computed tomography (<strong>nano-CT</strong>), and two- and three-dimensional X-ray absorption near-edge structure <strong>(2D/3D XANES) mapping</strong>. These techniques enable us to visualize and quantify structural, chemical, and electrochemical transformations across multiple length scales, providing new insights into the complex processes that control energy storage and conversion materials. 
                     </p>
                     <p class="mb-3">
                         Building on extensive expertise in synchrotron instrumentation and beamline development at the Advanced Photon Source (APS), Argonne National Laboratory (ANL), our group is committed to advancing next-generation characterization methodologies while addressing critical challenges in sustainable energy technologies. 
                     </p>
-
-                    <div class="mt-4 pt-3 border-top border-light">
-                        <p class="mb-1"><strong class="text-secondary">Location:</strong> Zijingang campus, Zhejiang University, Hangzhou, China</p>
-                        <p class="mb-0"><strong class="text-secondary">Join Us:</strong> We are always interested in working with <strong>motivated students, postdoctoral researchers, and collaborators</strong> who share our passion for synchrotron science, advanced characterization, and sustainable energy techniques.</p>
                     </div>
-                </div>
+                    <a class="more-toggle" data-bs-toggle="collapse" href="#moreAbout" role="button" aria-expanded="false" aria-controls="moreAbout"><span class="when-closed">Read more</span><span class="when-open">Show less</span> <i class="fa-solid fa-chevron-down ms-1 small"></i></a>
+
+</div>
             </div>
 
-            <!-- NEW: Large Auto-Scrolling Highlights Showcase at the Bottom of Home Page -->
-            <div class="row mt-5 pt-4">
-                <div class="col-12">
-                    <h3 class="fw-bold text-dark mb-4 text-center" style="font-family: 'Playfair Display', serif;">Highlights</h3>
-                    <div class="showcase-carousel-wrapper">
-                        <div id="highlightedWorksCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
-                            <div class="carousel-indicators">
-                                <button type="button" data-bs-target="#highlightedWorksCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
-                                <button type="button" data-bs-target="#highlightedWorksCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
-                                <button type="button" data-bs-target="#highlightedWorksCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
-                                <button type="button" data-bs-target="#highlightedWorksCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
-                            </div>
-                            <div class="carousel-inner">
-                                
-                                <!-- Slide 1 -->
-                                <div class="carousel-item active">
-                                    <img src="highlight1.jpg" class="d-block showcase-img" alt="Highlighted Work 1">
-                                    <div class="carousel-caption d-none d-md-block carousel-caption-custom">
-                                        <h5 class="fw-bold mb-1 text-white">Novel Cathode Stablization Strategy -- Nature</h5>
-                                        <p class="small mb-0 text-light">Stabilizing Ni-rich layered cathodes via a coherent perovskite phase strategy. Published in <em>Nature</em>.</p>
-                                    </div>
-                                </div>
-
-                                <!-- Slide 2 -->
-                                <div class="carousel-item">
-                                    <img src="highlight2.jpg" class="d-block showcase-img" alt="Highlighted Work 2">
-                                    <div class="carousel-caption d-none d-md-block carousel-caption-custom">
-                                        <h5 class="fw-bold mb-1 text-white">Multimodal Synchrotron Techniques for Battery Materials</h5>
-                                        <p class="small mb-0 text-light">Highlighting our advanced studies on probing battery materials via multimodal synchrotron characterization.</p>
-                                    </div>
-                                </div>
-
-                                <!-- Slide 3 -->
-                                <div class="carousel-item">
-                                    <img src="highlight3.jpg" class="d-block showcase-img" alt="Highlighted Work 3">
-                                    <div class="carousel-caption d-none d-md-block carousel-caption-custom">
-                                        <h5 class="fw-bold mb-1 text-white">Principles of 2D TXM-XANES Chemical Mapping</h5>
-                                        <p class="small mb-0 text-light">Unlocking advanced synchrotron imaging principles for quantitative 2D transmission X-ray microscopy and XANES mapping.</p>
-                                    </div>
-                                </div>
-
-                                <!-- Slide 4 -->
-                                <div class="carousel-item">
-                                    <img src="highlight4.jpg" class="d-block showcase-img" alt="Highlighted Work 4">
-                                    <div class="carousel-caption d-none d-md-block carousel-caption-custom">
-                                        <h5 class="fw-bold mb-1 text-white">In-House Developed Analysis Algorithms</h5>
-                                        <p class="small mb-0 text-light">Advanced characterization tools empowered by custom automated algorithms and machine learning.</p>
-                                    </div>
-                                </div>
-
-                            </div>
-                            <button class="carousel-control-prev" type="button" data-bs-target="#highlightedWorksCarousel" data-bs-slide="prev">
-                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Previous</span>
-                            </button>
-                            <button class="carousel-control-next" type="button" data-bs-target="#highlightedWorksCarousel" data-bs-slide="next">
-                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                                <span class="visually-hidden">Next</span>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            <div class="row mt-5"><div class="col-lg-10 mx-auto"><div class="join-card">
+                        <h2 class="h5 fw-bold mb-2" style="font-family:'Playfair Display',Georgia,serif;">Join Us</h2>
+                        <p class="mb-3">We are always interested in working with <strong>motivated students, postdoctoral researchers, and collaborators</strong> who share our passion for synchrotron science, advanced characterization, and sustainable energy techniques.</p>
+                        <a href="mailto:wanglg@zju.edu.cn?subject=Prospective%20member%20%2F%20collaboration" class="btn btn-accent btn-sm px-3"><i class="fa-regular fa-envelope me-1"></i> Get in touch</a>
+                        <p class="mt-3 mb-0 small text-muted"><i class="fa-solid fa-location-dot me-2 text-accent"></i>Zijingang campus, Zhejiang University, Hangzhou, China</p>
+                    </div></div></div>
             <!-- End of Showcase Section -->
 
         </div>
-    </main>
+    </section>
 
-    <main id="news" class="page-content fade-in d-none">
+    <section id="news" class="page page-content fade-in">
         <div class="container">
-            <h2 class="section-title">Latest News</h2>
+            <div class="section-head"><h2 class="section-title">Latest News</h2></div>
             <div class="row">
                 <div class="col-lg-10 col-xl-8">
                     <div class="news-timeline">
@@ -596,9 +612,20 @@
                             </div>
                         </div>
 -->
+                        <div class="news-item">
+                            <div class="news-date">Nov. 2026</div>
+                            <h5 class="fw-bold text-dark">New Paper Published in <em>Advanced Materials</em></h5>
+                            <p class="text-muted">Congratulations to Jiaxin on the publication of her new paper, “<strong>Dynamic Interfacial S–O Bonding Stabilizes Oxygen Redox through Reversible Electron Confinement</strong>” in Advanced Materials.</p>
+                        </div>
 
                         <div class="news-item">
-                            <div class="news-date">Oct, 2026</div>
+                            <div class="news-date">Oct 2026</div>
+                            <h5 class="fw-bold text-dark">New Paper Published in <em>J. Mater. Chem. A</em></h5>
+                            <p class="text-muted">Congratulations to Jiahui on the publication of her first paper, “<strong>Crystal-scale engineering of layered oxide cathodes: structure–property relationships and design principles</strong>” in J. Mater. Chem. A.</p>
+                        </div>
+
+                        <div class="news-item">
+                            <div class="news-date">Oct 2026</div>
                             <div class="row g-3 align-items-start">
                                 
                                 <div class="col-md-8">
@@ -608,14 +635,14 @@
                                 
                                 <div class="col-md-4">
                                     <div class="news-img-wrapper">
-                                        <img src="top2scientist.jpg" class="news-img" alt="Description of the news image">
+                                        <img src="top2scientist.jpg" loading="lazy" class="news-img" alt="Stanford–Elsevier top 2% scientists list">
                                     </div>
                                 </div>
                             </div>
                         </div>
 
                         <div class="news-item">
-                            <div class="news-date">Oct, 2026</div>
+                            <div class="news-date">Oct 2026</div>
                             <div class="row g-3 align-items-start">
                                 
                                 <div class="col-md-8">
@@ -625,7 +652,7 @@
                                 
                                 <div class="col-md-4">
                                     <div class="news-img-wrapper">
-                                        <img src="yikang_paper1.jpg" class="news-img" alt="Description of the news image">
+                                        <img src="yikang_paper1.jpg" loading="lazy" class="news-img" alt="Figure from the Photon Science paper">
                                     </div>
                                 </div>
                             </div>
@@ -634,47 +661,47 @@
                         <!-- OPTION B: Keep it the Current Way (Text Only) -->
 
                         <div class="news-item">
-                            <div class="news-date">Aug, 2026</div>
+                            <div class="news-date">Aug 2026</div>
                             <h5 class="fw-bold text-dark">Congrats again to Yikang on Receiving an NSFC Grant</h5>
                             <p class="text-muted">Congratulations to our postdoctoral researcher, Yikang, on being awarded a grant from NSFC.</p>
                         </div>
                         <div class="news-item">
-                            <div class="news-date">June, 2026</div>
+                            <div class="news-date">Jun 2026</div>
                             <h5 class="fw-bold text-dark">Congrats to Yikang on Receiving a Postdoc Research Grant</h5>
                             <p class="text-muted">Congrats to our postdoctoral researcher, Yikang, on being awarded a grant from China Postdoctoral Science Foundation.</p>
                         </div>                        
                         <div class="news-item">
-                            <div class="news-date">June, 2026</div>
-                            <h5 class="fw-bold text-dark">Granted an Key Program</h5>
-                            <p class="text-muted">We are honored to receive support from the National Key R&D Program of China. This recognition will enable us to further advance our research and in-operando synchrotron characterizations.</p>
+                            <div class="news-date">Jun 2026</div>
+                            <h5 class="fw-bold text-dark">Granted a Key Program</h5>
+                            <p class="text-muted">We are honored to receive support from the National Key R&amp;D Program of China. This recognition will enable us to further advance our research and in-operando synchrotron characterizations.</p>
                         </div>
                         <div class="news-item">
-                            <div class="news-date">May, 2026</div>
+                            <div class="news-date">May 2026</div>
                             <h5 class="fw-bold text-dark">New Journey Begins</h5>
                             <p class="text-muted">New Journey.</p>
                         </div>
                         <div class="news-item">
-                            <div class="news-date">Sept, 2025</div>
+                            <div class="news-date">Sep 2025</div>
                             <h5 class="fw-bold text-dark">Congrats again to Xueyan on Receiving Another Research Grant</h5>
                             <p class="text-muted">Congratulations to our postdoctoral researcher, Xueyan, on securing another research grant from the Zhejiang Province Selected Foundation of China.</p>
                         </div>
                         <div class="news-item">
-                            <div class="news-date">Aug, 2025</div>
+                            <div class="news-date">Aug 2025</div>
                             <h5 class="fw-bold text-dark">Congrats to Xueyan on Receiving an NSFC Grant</h5>
                             <p class="text-muted">Congratulations to our postdoctoral researcher, Xueyan, on being awarded a grant from NSFC.</p>
                         </div>
                         <div class="news-item">
-                            <div class="news-date">Jan, 2024</div>
+                            <div class="news-date">Jan 2024</div>
                             <h5 class="fw-bold text-dark">Awarded Zhejiang NSF Outstanding Youth Funding</h5>
                             <p class="text-muted">We are honored to receive support from the Zhejiang Natural Science Foundation through the Outstanding Youth Program.</p>
                         </div>
                         <div class="news-item">
-                            <div class="news-date">Jan, 2023</div>
+                            <div class="news-date">Jan 2023</div>
                             <h5 class="fw-bold text-dark">Awarded an NSFC General Program Grant</h5>
                             <p class="text-muted">We are pleased to announce that our research has been awarded funding by the National Natural Science Foundation of China.</p>
                         </div>
                         <div class="news-item">
-                            <div class="news-date">Jan, 2023</div>
+                            <div class="news-date">Jan 2023</div>
                             <h5 class="fw-bold text-dark">Officially Launching at ZJU</h5>
                             <p class="text-muted">Starting...</p>
                         </div>
@@ -683,78 +710,132 @@
                 </div>
             </div>
         </div>
-    </main>
+    </section>
 
-    <main id="projects" class="page-content fade-in d-none">
+    <section id="projects" class="page page-content fade-in">
         <div class="container">
-            <h2 class="section-title">Active Projects</h2>
+            <div class="section-head"><h2 class="section-title">Research</h2><p class="section-lead">Highlights of our recent work, and the three themes that connect it.</p></div>
+            <div class="row mb-5">
+                <div class="col-12">
+                    <h3 class="subhead">Highlights</h3>
+                    <div class="showcase-carousel-wrapper">
+                        <div id="highlightedWorksCarousel" class="carousel slide" data-bs-ride="carousel" data-bs-interval="4000">
+                            <div class="carousel-indicators">
+                                <button type="button" data-bs-target="#highlightedWorksCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                                <button type="button" data-bs-target="#highlightedWorksCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                                <button type="button" data-bs-target="#highlightedWorksCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                                <button type="button" data-bs-target="#highlightedWorksCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+                            </div>
+                            <div class="carousel-inner">
+                                
+                                <!-- Slide 1 -->
+                                <div class="carousel-item active">
+                                    <img src="highlight1.jpg" class="d-block showcase-img" alt="Novel Cathode Stabilization Strategy">
+                                    <div class="carousel-caption d-none d-md-block carousel-caption-custom">
+                                        <h5 class="fw-bold mb-1 text-white">Novel Cathode Stabilization Strategy -- Nature</h5>
+                                        <p class="small mb-0 text-light">Stabilizing Ni-rich layered cathodes via a coherent perovskite phase strategy. Published in <em>Nature</em>.</p>
+                                    </div>
+                                </div>
+
+                                <!-- Slide 2 -->
+                                <div class="carousel-item">
+                                    <img src="highlight2.jpg" loading="lazy" class="d-block showcase-img" alt="Multimodal Synchrotron Techniques for Battery Materials">
+                                    <div class="carousel-caption d-none d-md-block carousel-caption-custom">
+                                        <h5 class="fw-bold mb-1 text-white">Multimodal Synchrotron Techniques for Battery Materials</h5>
+                                        <p class="small mb-0 text-light">Highlighting our advanced studies on probing battery materials via multimodal synchrotron characterization.</p>
+                                    </div>
+                                </div>
+
+                                <!-- Slide 3 -->
+                                <div class="carousel-item">
+                                    <img src="highlight3.jpg" loading="lazy" class="d-block showcase-img" alt="Principles of 2D TXM-XANES Chemical Mapping">
+                                    <div class="carousel-caption d-none d-md-block carousel-caption-custom">
+                                        <h5 class="fw-bold mb-1 text-white">Principles of 2D TXM-XANES Chemical Mapping</h5>
+                                        <p class="small mb-0 text-light">Unlocking advanced synchrotron imaging principles for quantitative 2D transmission X-ray microscopy and XANES mapping.</p>
+                                    </div>
+                                </div>
+
+                                <!-- Slide 4 -->
+                                <div class="carousel-item">
+                                    <img src="highlight4.jpg" loading="lazy" class="d-block showcase-img" alt="In-House Developed Analysis Algorithms">
+                                    <div class="carousel-caption d-none d-md-block carousel-caption-custom">
+                                        <h5 class="fw-bold mb-1 text-white">In-House Developed Analysis Algorithms</h5>
+                                        <p class="small mb-0 text-light">Advanced characterization tools empowered by custom automated algorithms and machine learning.</p>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <button class="carousel-control-prev" type="button" data-bs-target="#highlightedWorksCarousel" data-bs-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Previous</span>
+                            </button>
+                            <button class="carousel-control-next" type="button" data-bs-target="#highlightedWorksCarousel" data-bs-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="visually-hidden">Next</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <h3 class="subhead">Research Directions</h3>
             <div class="row g-4 mt-2">
                 <div class="col-md-6 col-lg-4">
                     <div class="project-card">
                         <div class="project-img-wrapper">
-                            <img src="project1.jpg" class="project-img" alt="CrowdIA Visual Representation">
+                            <img src="project1.jpg" class="project-img" loading="lazy" alt="Layered oxide cathode materials">
                         </div>
                         <div class="project-body">
                             <h4 class="project-title">Cathode Materials</h4>
                             <p class="text-muted small">We explore the structural and chemical evolution of high-energy-density layered oxide cathodes, including Ni-rich and Li- and Mn-rich materials, to reveal the fundamental mechanisms controlling energy density, degradation, and lifetime.</p>
-                            <a href="#" class="btn btn-link text-decoration-none p-0 fw-semibold">View Publication <i class="fa-solid fa-arrow-right ms-1"></i></a>
+                            <a href="#publications" class="project-link" data-pub-search="cathode">Related publications <i class="fa-solid fa-arrow-right ms-1"></i></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4">
                     <div class="project-card">
                         <div class="project-img-wrapper">
-                            <img src="project2.jpg" class="project-img" alt="Connect the Dots Analytics Dashboard">
+                            <img src="project2.jpg" class="project-img" loading="lazy" alt="Solid-state battery interfaces">
                         </div>
                         <div class="project-body">
                             <h4 class="project-title">Solid-State Batteries</h4>
                             <p class="text-muted small">We investigate interfacial phenomena, device architectures, and degradation pathways in solid-state batteries through advanced characterization approaches to accelerate the development of next-generation energy storage technologies.</p>
-                            <a href="#" class="btn btn-link text-decoration-none p-0 fw-semibold">Watch Video Demo <i class="fa-solid fa-arrow-right ms-1"></i></a>
+                            <a href="#publications" class="project-link" data-pub-search="solid">Related publications <i class="fa-solid fa-arrow-right ms-1"></i></a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-6 col-lg-4">
                     <div class="project-card">
                         <div class="project-img-wrapper">
-                            <img src="project3.jpg" class="project-img" alt="HyperTuner interface">
+                            <img src="project3.jpg" class="project-img" loading="lazy" alt="Synchrotron imaging and analysis tools">
                         </div>
                         <div class="project-body">
                             <h4 class="project-title">Synchrotron Techniques</h4>
                             <p class="text-muted small">We create next-generation synchrotron characterization tools by combining advanced X-ray methodologies with self-developed algorithms and machine learning for automated discovery of materials processes across multiple length scales.</p>
-                            <a href="#" class="btn btn-link text-decoration-none p-0 fw-semibold">View Case Study <i class="fa-solid fa-arrow-right ms-1"></i></a>
+                            <a href="#publications" class="project-link" data-pub-search="">All publications <i class="fa-solid fa-arrow-right ms-1"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </main>
+    </section>
 
-    <main id="publications" class="page-content fade-in d-none">
+    <section id="publications" class="page page-content fade-in">
         <div class="container">
-            <h2 class="section-title">Publications</h2>
+            <div class="section-head"><h2 class="section-title">Publications</h2></div>
             
-            <!-- Year Filter Dropdown -->
-            <div class="row mb-4 align-items-center">
-                <div class="col-auto">
-                    <label for="yearSelect" class="col-form-label fw-bold text-secondary">Filter by Year:</label>
-                </div>
-                <div class="col-auto" style="min-width: 160px;">
-                    <select id="yearSelect" class="form-select" onchange="filterYearDropdown(this.value)">
-                        <option value="all" selected>All Years</option>
-                        <option value="2026">2026</option>
-                        <option value="2025">2025</option>
-                        <option value="2024">2024</option>
-                        <option value="2023">2023</option>
-                        <option value="2022">2022</option>
-                        <option value="2021">2021</option>
-                        <option value="2020">2020</option>
-                        <option value="2019">2019</option>
-                        <option value="2018">2018</option>
-                        <option value="2017">2017</option>
-                        <option value="2015">2015</option>
-                    </select>
+            <div class="pub-toolbar">
+                <div class="row g-2 align-items-center">
+                    <div class="col-12 col-md">
+                        <div class="input-group">
+                            <span class="input-group-text bg-white"><i class="fa-solid fa-magnifying-glass text-muted"></i></span>
+                            <input id="pubSearch" type="search" class="form-control" placeholder="Search title, author, or journal…" aria-label="Search publications">
+                        </div>
+                    </div>
+                    <div class="col-7 col-md-auto"><select id="yearSelect" class="form-select" aria-label="Filter by year"><option value="all">All years</option></select></div>
+                    <div class="col-5 col-md-auto text-end"><span id="pubCount" class="small text-muted" aria-live="polite"></span></div>
                 </div>
             </div>
+            <p id="pubEmpty" class="text-muted text-center py-5" hidden>No publications match your search.</p>
 
             <div class="row mt-2">
                 <div class="col-lg-12">
@@ -762,6 +843,12 @@
                     <!-- =================== 2026 =================== -->
                     <div class="year-section" data-year="2026">
                         <h3 class="year-heading">2026</h3>
+
+                        <div class="pub-card">
+                            <h5 class="pub-title">Dynamic Interfacial S–O Bonding Stabilizes Oxygen Redox through Reversible Electron Confinement</h5>
+                            <div class="pub-authors">Jiaxin Yan, Yuanheng Wang, Ruichen Zhu, Xin Chen, Haixia Yang, Zhengyang Bao, Yifan Li, Chade Lv, <span class="author-self">Liguang Wang*</span>, Pengjian Zuo*</div>
+                            <div class="pub-meta"><span class="journal-bold">Advanced Materials</span>, 2026, accepted</div>
+                        </div>
 
                         <div class="pub-card">
                             <h5 class="pub-title">Machine Learning in Liquid Electrolyte Design for Rechargeable Batteries: Addressing Fundamental Challenges</h5>
@@ -782,7 +869,7 @@
                         </div>
 
                         <div class="pub-card">
-                            <h5 class="pub-title">Iron-mediated reversible lattice-oxygen redox enables stable 200 Wh Kg-1 sodium-ion batteries</h5>
+                            <h5 class="pub-title">Iron-mediated reversible lattice-oxygen redox enables stable 200 Wh kg<sup>−1</sup> sodium-ion batteries</h5>
                             <div class="pub-authors">Chu, Shiyong#; <span class="author-self">Wang, Liguang#</span>; Bian, Jingjing#; Cheng, Chen; Tian, Jiaming; Sheng, Chuanchao; Zhou, Zengqing; Shi, Tianze; Guo, Jinghua; Zhang, Liang; Lu, Jun; Zhou, Haoshen; Guo, Shaohua</div>
                             <div class="pub-meta"><span class="journal-bold">Nature Energy</span>, (2026), https://doi.org/10.1038/s41560-026-02112-8</div>
                         </div>
@@ -832,7 +919,7 @@
                         <div class="pub-card">
                             <h5 class="pub-title">Cation-Tuned Reaction Mechanisms in Metal Dicyanamide Anodes for Lithium-Ion Batteries with High Reversible Capacity</h5>
                             <div class="pub-authors">Qiao, Xianji; Cai, Guohong; Müller, Peter C; Ye, Fengying; Xu, Pan; Hu, Yanyan; Corkett, Alex J; Zhang, Zeyue; Li, Weihong; Sun, Panlin; Tang, Qiulong; Luo, Wenting; Zhang, Wujun; Wang, Canpei; <span class="author-self">Wang, Liguang*</span>; Shen, Yanbin; Dronskowski, Richard; Lu, Jun; Sun, Junliang</div>
-                            <div class="pub-meta"><span class="journal-bold">ACS nano</span>, Vol. 20, No. 8, pp. 7093-7104 (2026)</div>
+                            <div class="pub-meta"><span class="journal-bold">ACS Nano</span>, Vol. 20, No. 8, pp. 7093-7104 (2026)</div>
                         </div>
 
                         <div class="pub-card">
@@ -872,9 +959,15 @@
                         </div>
 
                         <div class="pub-card">
-                            <h5 class="pub-title">Molecular Barrier Engineering Against Cryogenic Solvent Aggregation Enables Sodium-Ion Battery Operation at-60° C</h5>
-                            <div class="pub-authors">Zhang, Guangxiang; Fu, Chuankai; Li, Shuai; Zhu, Ruichen; Ma, Chi; Yan, Jiaxin; Liu, Ziwei; Niu, Yuxiang; Huo, Hua; Du, Chunyu; <span class="author-self">Wang, Liguang*</span>; Gao, Yunzhi; Yin, Geping; Chen,Wei; Ma, Yulin</div>
+                            <h5 class="pub-title">Molecular Barrier Engineering Against Cryogenic Solvent Aggregation Enables Sodium-Ion Battery Operation at −60 °C</h5>
+                            <div class="pub-authors">Zhang, Guangxiang; Fu, Chuankai; Li, Shuai; Zhu, Ruichen; Ma, Chi; Yan, Jiaxin; Liu, Ziwei; Niu, Yuxiang; Huo, Hua; Du, Chunyu; <span class="author-self">Wang, Liguang*</span>; Gao, Yunzhi; Yin, Geping; Chen, Wei; Ma, Yulin</div>
                             <div class="pub-meta"><span class="journal-bold">Energy Storage Materials</span> (2026)</div>
+                        </div>
+
+                        <div class="pub-card">
+                            <h5 class="pub-title">Crystal-scale engineering of layered oxide cathodes: structure–property relationships and design principles</h5>
+                            <div class="pub-authors">Jiahui Xu, Ruichen Zhu, Jiayao Guo, Di Wang, Yikang Yu<span class="author-self">Wang, Liguang*</span></div>
+                            <div class="pub-meta"><span class="journal-bold">Journal of Materials Chemistry A</span>, 2026, doi:10.1039/d6ta06831f</div>
                         </div>
 
                         <div class="pub-card">
@@ -933,7 +1026,7 @@
                         <div class="pub-card">
                             <h5 class="pub-title">Bridging Academia and Industry: Promoting the Industrialization of Li-Rich Mn-Based Cathode Material</h5>
                             <div class="pub-authors">Qin, Ning; <span class="author-self">Wang, Liguang*</span>; Lu, Jun</div>
-                            <div class="pub-meta"><span class="journal-bold">Energy & Fuels</span>, Vol. 39, No. 33, pp. 15912-15918 (2025)</div>
+                            <div class="pub-meta"><span class="journal-bold">Energy &amp; Fuels</span>, Vol. 39, No. 33, pp. 15912-15918 (2025)</div>
                         </div>
 
                         <div class="pub-card">
@@ -969,7 +1062,7 @@
                         <div class="pub-card">
                             <h5 class="pub-title">Resonant inelastic X-ray scattering for studying materials for renewable energy conversion and storage</h5>
                             <div class="pub-authors">Rongfu Hong, Lixin Xing, Mingjie Wu, Zhangsen Chen, Ning Wang, Ling Meng, Siyu Ye, <span class="author-self">Liguang Wang</span>, Gaixia Zhang, Lei Du</div>
-                            <div class="pub-meta"><span class="journal-bold">Iscience</span> (2025)</div>
+                            <div class="pub-meta"><span class="journal-bold">iScience</span> (2025)</div>
                         </div>
 
                         <div class="pub-card">
@@ -1064,7 +1157,7 @@
                         <div class="pub-card">
                             <h5 class="pub-title">A “seat-squatting” strategy via lithium substitution to suppress Fe-migration in Na layered oxide cathodes</h5>
                             <div class="pub-authors">Yaoshen Niu, Zilin Hu, Huican Mao, Lin Zhou, <span class="author-self">Liguang Wang</span>, Xiaobing Lou, Bo Zhang, Dongdong Xiao, Yang Yang, Feixiang Ding, et al.</div>
-                            <div class="pub-meta"><span class="journal-bold">Energy & Environmental Science</span> (2024)</div>
+                            <div class="pub-meta"><span class="journal-bold">Energy &amp; Environmental Science</span> (2024)</div>
                         </div>
 
                         <div class="pub-card">
@@ -1124,7 +1217,7 @@
                         <div class="pub-card">
                             <h5 class="pub-title">Revealing lithium configuration in aged layered oxides for effective regeneration</h5>
                             <div class="pub-authors">Liu, Yawen; Jiang, Wei; Ling, Min; Fan, Xinming; <span class="author-self">Wang, Liguang*</span>; Liang, Chengdu</div>
-                            <div class="pub-meta"><span class="journal-bold">ACS Applied Materials & Interfaces</span>, Vol. 15, No. 7, pp. 9465-9474 (2023)</div>
+                            <div class="pub-meta"><span class="journal-bold">ACS Applied Materials &amp; Interfaces</span>, Vol. 15, No. 7, pp. 9465-9474 (2023)</div>
                         </div>
 
                         <div class="pub-card">
@@ -1308,7 +1401,7 @@
                         <div class="pub-card">
                             <h5 class="pub-title">Epoxy cross-linking enhanced the toughness of polysaccharides as a silicon anode binder for lithium-ion batteries</h5>
                             <div class="pub-authors">Wang, Hongxun; Wei, Di; Zhang, Bao; Ji, Zekai; <span class="author-self">Wang, Liguang*</span>; Ling, Min; Liang, Chengdu</div>
-                            <div class="pub-meta"><span class="journal-bold">ACS Applied Materials & Interfaces</span>, Vol. 13, No. 31, pp. 37704-37712 (2021)</div>
+                            <div class="pub-meta"><span class="journal-bold">ACS Applied Materials &amp; Interfaces</span>, Vol. 13, No. 31, pp. 37704-37712 (2021)</div>
                         </div>
 
                         <div class="pub-card">
@@ -1404,13 +1497,13 @@
                         <div class="pub-card">
                             <h5 class="pub-title">Enabling Highly stable Li--O2 batteries with full discharge--charge capability: the porous binder-and carbon-free IrNi nanosheet cathode</h5>
                             <div class="pub-authors">Zhengyi Qian, Xudong Li, <span class="author-self">Liguang Wang</span>, Tianpin Wu, Baoyu Sun, Lei Du, Yulin Ma, Chunyu Du, Pengjian Zuo, Geping Yin</div>
-                            <div class="pub-meta"><span class="journal-bold">ACS Sustainable Chemistry & Engineering</span> (2020)</div>
+                            <div class="pub-meta"><span class="journal-bold">ACS Sustainable Chemistry &amp; Engineering</span> (2020)</div>
                         </div>
 
                         <div class="pub-card">
                             <h5 class="pub-title">Boosted oxygen evolution reactivity via atomic iron doping in cobalt carbonate hydroxide hydrate</h5>
                             <div class="pub-authors">Shan Zhang, Bolong Huang, <span class="author-self">Liguang Wang</span>, Xiaoyan Zhang, Haishuang Zhu, Xiaoqing Zhu, Jing Li, Shaojun Guo, Erkang Wang</div>
-                            <div class="pub-meta"><span class="journal-bold">ACS Applied Materials & Interfaces</span> (2020)</div>
+                            <div class="pub-meta"><span class="journal-bold">ACS Applied Materials &amp; Interfaces</span> (2020)</div>
                         </div>
 
                         <div class="pub-card">
@@ -1606,244 +1699,150 @@
                 </div>
             </div>
         </div>
-    </main>
+    </section>
 
-    <main id="team" class="page-content fade-in d-none">
+    <section id="team" class="page page-content fade-in">
         <div class="container">
-            <h2 class="section-title">Research Team</h2>
-            <div class="row g-4 mt-2">
-                
-                <!-- Member 1 -->
-                <div class="col-md-6 col-lg-3">
-                    <div class="team-card">
-                        <div class="team-img-wrapper">
-                            <img src="profile.jpg" class="team-avatar" alt="Dr. Liguang Wang">
-                        </div>
-                        <div class="team-info">
-                            <h5 class="team-name">Dr. Liguang Wang</h5>
-                            <p class="text-accent fw-semibold mb-1">Professor</p>
-                            <p class="text-muted small mb-0">Principal Investigator</p>
-                        </div>
-                    </div>
+            <div class="section-head"><h2 class="section-title">Research Team</h2><p class="section-lead">Researchers and students of the Xplore-energy Lab.</p></div>
+            <div class="team-group">
+                <h3 class="group-title">Principal Investigator</h3>
+                <div class="row g-4">
+                    <div class="col-6 col-md-4 col-lg-3"><div class="team-card"><div class="team-img-wrapper"><img src="profile.jpg" loading="lazy" class="team-avatar" alt="Dr. Liguang Wang"></div><div class="team-info"><h4 class="team-name">Dr. Liguang Wang</h4><p class="text-accent fw-semibold mb-1">Professor</p><p class="text-muted small mb-0">Principal Investigator</p></div></div></div>
                 </div>
-
-                <!-- Member 2 -->
-                <div class="col-md-6 col-lg-3">
-                    <div class="team-card">
-                        <div class="team-img-wrapper">
-                            <img src="yuyikang.jpg" class="team-avatar" alt="Student 1">
-                        </div>
-                        <div class="team-info">
-                            <h5 class="team-name">Dr. Yikang Yu</h5>
-                            <p class="text-accent fw-semibold mb-1">Postdoc</p>
-                            <p class="text-muted small mb-0">Anode & Electrolyte</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Member 3 -->
-                <div class="col-md-6 col-lg-3">
-                    <div class="team-card">
-                        <div class="team-img-wrapper">
-                            <img src="zhuruichen.jpg" class="team-avatar" alt="Student 2">
-                        </div>
-                        <div class="team-info">
-                            <h5 class="team-name">Ruichen Zhu</h5>
-                            <p class="text-accent fw-semibold mb-1">Ph.D. Student 2024</p>
-                            <p class="text-muted small mb-0">TXM & AI</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Member 4 -->
-                <div class="col-md-6 col-lg-3">
-                    <div class="team-card">
-                        <div class="team-img-wrapper">
-                            <img src="xujiahui.jpg" class="team-avatar" alt="Student 3">
-                        </div>
-                        <div class="team-info">
-                            <h5 class="team-name">Jiahui Xu</h5>
-                            <p class="text-accent fw-semibold mb-1">M.S. Student 2024</p>
-                            <p class="text-muted small mb-0">LiNiO2 & Diffraction (imaging)</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Member 5 -->
-                <div class="col-md-6 col-lg-3">
-                    <div class="team-card">
-                        <div class="team-img-wrapper">
-                            <img src="guojiayao.jpg" class="team-avatar" alt="Student 5">
-                        </div>
-                        <div class="team-info">
-                            <h5 class="team-name">Jiayao Guo</h5>
-                            <p class="text-accent fw-semibold mb-1">Ph.D. Student 2025</p>
-                            <p class="text-muted small mb-0">Crystal growth & Diffraction (imaging)</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Member 6 -->
-                <div class="col-md-6 col-lg-3">
-                    <div class="team-card">
-                        <div class="team-img-wrapper">
-                            <img src="wangdi.jpg" class="team-avatar" alt="Student 6">
-                        </div>
-                        <div class="team-info">
-                            <h5 class="team-name">Di Wang</h5>
-                            <p class="text-accent fw-semibold mb-1">M.S. Student 2025</p>
-                            <p class="text-muted small mb-0">Solid-state battery & Spectroscopy</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Member 7 -->
-                <div class="col-md-6 col-lg-3">
-                    <div class="team-card">
-                        <div class="team-img-wrapper">
-                            <img src="wanghanlin.jpg" class="team-avatar" alt="Student 7">
-                        </div>
-                        <div class="team-info">
-                            <h5 class="team-name">Hanlin Wang</h5>
-                            <p class="text-accent fw-semibold mb-1">Ph.D. Student 2026</p>
-                            <p class="text-muted small mb-0">Cathode</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Member 8 -->
-                <div class="col-md-6 col-lg-3">
-                    <div class="team-card">
-                        <div class="team-img-wrapper">
-                            <img src="chenxiuyu.jpg" class="team-avatar" alt="Student 8">
-                        </div>
-                        <div class="team-info">
-                            <h5 class="team-name">Xiuyu Chen</h5>
-                            <p class="text-accent fw-semibold mb-1">M.S. Student 2026</p>
-                            <p class="text-muted small mb-0">Li- and Mn-rich cathode & TXM</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Member 9 -->
-                <div class="col-md-6 col-lg-3">
-                    <div class="team-card">
-                        <div class="team-img-wrapper">
-                            <img src="xueyan.jpg" class="team-avatar" alt="Student 9">
-                        </div>
-                        <div class="team-info">
-                            <h5 class="team-name">Dr. Xueyan Zhang</h5>
-                            <p class="text-accent fw-semibold mb-1">Co-Supervised Postdoc</p>
-                            <p class="text-muted small mb-0">Solid-state battery & NMR</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Member 10 -->
-                <div class="col-md-6 col-lg-3">
-                    <div class="team-card">
-                        <div class="team-img-wrapper">
-                            <img src="lixiaopeng.jpg" class="team-avatar" alt="Student 10">
-                        </div>
-                        <div class="team-info">
-                            <h5 class="team-name">Dr. Xiaopeng Li</h5>
-                            <p class="text-accent fw-semibold mb-1">Co-Supervised Postdoc</p>
-                            <p class="text-muted small mb-0">Cathode materials</p>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Member 11 -->
-                <div class="col-md-6 col-lg-3">
-                    <div class="team-card">
-                        <div class="team-img-wrapper">
-                            <img src="gejianwen.jpg" class="team-avatar" alt="Student 11">
-                        </div>
-                        <div class="team-info">
-                            <h5 class="team-name">Dr. Jianwen Ge</h5>
-                            <p class="text-accent fw-semibold mb-1">Co-Supervised Postdoc</p>
-                            <p class="text-muted small mb-0">Solid-state battery</p>
-                        </div>
-                    </div>
-                </div>
-                <!-- Member 12 -->
-                <div class="col-md-6 col-lg-3">
-                    <div class="team-card">
-                        <div class="team-img-wrapper">
-                            <img src="yixiaohui.jpg" class="team-avatar" alt="Student 12">
-                        </div>
-                        <div class="team-info">
-                            <h5 class="team-name">Xiaohui Yi</h5>
-                            <p class="text-accent fw-semibold mb-1">Undergraduate Student</p>
-                            <p class="text-muted small mb-0">...</p>
-                        </div>
-                    </div>
-                </div>
-
             </div>
+            <div class="team-group">
+                <h3 class="group-title">Postdoctoral Researchers</h3>
+                <div class="row g-4">
+                    <div class="col-6 col-md-4 col-lg-3"><div class="team-card"><div class="team-img-wrapper"><img src="yuyikang.jpg" loading="lazy" class="team-avatar" alt="Dr. Yikang Yu"></div><div class="team-info"><h4 class="team-name">Dr. Yikang Yu</h4><p class="text-accent fw-semibold mb-1">Postdoc</p><p class="text-muted small mb-0">Anode &amp; Electrolyte</p></div></div></div>
+                    <div class="col-6 col-md-4 col-lg-3"><div class="team-card"><div class="team-img-wrapper"><img src="xueyan.jpg" loading="lazy" class="team-avatar" alt="Dr. Xueyan Zhang"></div><div class="team-info"><h4 class="team-name">Dr. Xueyan Zhang</h4><p class="text-accent fw-semibold mb-1">Postdoc</p><p class="text-muted small mb-0">Solid-state battery &amp; NMR</p></div></div></div>
+                    <div class="col-6 col-md-4 col-lg-3"><div class="team-card"><div class="team-img-wrapper"><img src="lixiaopeng.jpg" loading="lazy" class="team-avatar" alt="Dr. Xiaopeng Li"></div><div class="team-info"><h4 class="team-name">Dr. Xiaopeng Li</h4><p class="text-accent fw-semibold mb-1">Postdoc</p><p class="text-muted small mb-0">Cathode materials</p></div></div></div>
+                    <div class="col-6 col-md-4 col-lg-3"><div class="team-card"><div class="team-img-wrapper"><img src="gejianwen.jpg" loading="lazy" class="team-avatar" alt="Dr. Jianwen Ge"></div><div class="team-info"><h4 class="team-name">Dr. Jianwen Ge</h4><p class="text-accent fw-semibold mb-1">Postdoc</p><p class="text-muted small mb-0">Solid-state battery</p></div></div></div>
+                </div>
+            </div>
+            <div class="team-group">
+                <h3 class="group-title">Ph.D. Students</h3>
+                <div class="row g-4">
+                    <div class="col-6 col-md-4 col-lg-3"><div class="team-card"><div class="team-img-wrapper"><img src="zhuruichen.jpg" loading="lazy" class="team-avatar" alt="Ruichen Zhu"></div><div class="team-info"><h4 class="team-name">Ruichen Zhu</h4><p class="text-accent fw-semibold mb-1">Ph.D. Student 2024</p><p class="text-muted small mb-0">TXM &amp; AI</p></div></div></div>
+                    <div class="col-6 col-md-4 col-lg-3"><div class="team-card"><div class="team-img-wrapper"><img src="guojiayao.jpg" loading="lazy" class="team-avatar" alt="Jiayao Guo"></div><div class="team-info"><h4 class="team-name">Jiayao Guo</h4><p class="text-accent fw-semibold mb-1">Ph.D. Student 2025</p><p class="text-muted small mb-0">Crystal growth &amp; Diffraction (imaging)</p></div></div></div>
+                    <div class="col-6 col-md-4 col-lg-3"><div class="team-card"><div class="team-img-wrapper"><img src="wanghanlin.jpg" loading="lazy" class="team-avatar" alt="Hanlin Wang"></div><div class="team-info"><h4 class="team-name">Hanlin Wang</h4><p class="text-accent fw-semibold mb-1">Ph.D. Student 2026</p><p class="text-muted small mb-0">Cathode</p></div></div></div>
+                </div>
+            </div>
+            <div class="team-group">
+                <h3 class="group-title">M.S. Students</h3>
+                <div class="row g-4">
+                    <div class="col-6 col-md-4 col-lg-3"><div class="team-card"><div class="team-img-wrapper"><img src="xujiahui.jpg" loading="lazy" class="team-avatar" alt="Jiahui Xu"></div><div class="team-info"><h4 class="team-name">Jiahui Xu</h4><p class="text-accent fw-semibold mb-1">M.S. Student 2024</p><p class="text-muted small mb-0">LiNiO2 &amp; Diffraction (imaging)</p></div></div></div>
+                    <div class="col-6 col-md-4 col-lg-3"><div class="team-card"><div class="team-img-wrapper"><img src="wangdi.jpg" loading="lazy" class="team-avatar" alt="Di Wang"></div><div class="team-info"><h4 class="team-name">Di Wang</h4><p class="text-accent fw-semibold mb-1">M.S. Student 2025</p><p class="text-muted small mb-0">Solid-state battery &amp; Spectroscopy</p></div></div></div>
+                    <div class="col-6 col-md-4 col-lg-3"><div class="team-card"><div class="team-img-wrapper"><img src="chenxiuyu.jpg" loading="lazy" class="team-avatar" alt="Xiuyu Chen"></div><div class="team-info"><h4 class="team-name">Xiuyu Chen</h4><p class="text-accent fw-semibold mb-1">M.S. Student 2026</p><p class="text-muted small mb-0">Li- and Mn-rich cathode &amp; TXM</p></div></div></div>
+                </div>
+            </div>
+            <div class="team-group">
+                <h3 class="group-title">Undergraduate Students</h3>
+                <div class="row g-4">
+                    <div class="col-6 col-md-4 col-lg-3"><div class="team-card"><div class="team-img-wrapper"><img src="yixiaohui.jpg" loading="lazy" class="team-avatar" alt="Xiaohui Yi"></div><div class="team-info"><h4 class="team-name">Xiaohui Yi</h4><p class="text-accent fw-semibold mb-1">Undergraduate Student</p></div></div></div>
+                </div>
+            </div>
+            <div class="join-card mt-2"><strong>Interested in joining?</strong> We welcome prospective students, postdocs, and collaborators. <a href="mailto:wanglg@zju.edu.cn?subject=Prospective%20member%20%2F%20collaboration">Email Dr. Wang</a>.</div>
         </div>
+    </section>
     </main>
 
     <footer>
         <div class="container text-center text-muted">
             <p class="mb-1">&copy; 2026 Dr. Liguang Wang. All rights reserved.</p>
             <p class="small text-secondary mb-2">College of Chemical and Biological Engineering • Zhejiang University</p>
-            <p class="small text-secondary mb-0"><i class="fa-regular fa-eye me-1"></i> Visitors: <span id="busuanzi_value_site_pv"></span></p>
+            <p id="visitors" class="small text-secondary mb-0"><i class="fa-regular fa-eye me-1"></i> Visitors: <span id="busuanzi_value_site_pv"></span></p>
             <script src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js" async></script>
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <button id="toTop" type="button" aria-label="Back to top"><i class="fa-solid fa-chevron-up"></i></button>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
     <script>
-        function runRouter() {
-            // Default to #about if hash is empty or invalid
-            const currentHash = window.location.hash || '#about';
-            const pages = ['#about', '#news', '#projects', '#publications', '#team'];
-            
-            pages.forEach(pageId => {
-                const element = document.querySelector(pageId);
-                if (element) {
-                    if (pageId === currentHash) {
-                        element.classList.remove('d-none');
-                        element.style.display = 'block';
-                    } else {
-                        element.style.display = 'none';
-                    }
-                }
-            });
+    (function () {
+        var $ = function (s, r) { return (r || document).querySelector(s); };
+        var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+        var pages = $$('.page'), ids = pages.map(function (p) { return p.id; });
+        var titles = { about: '', news: 'News · ', projects: 'Research · ', publications: 'Publications · ', team: 'Team · ' };
+        var BASE = 'Liguang Wang | Xplore-energy Lab';
 
-            document.querySelectorAll('.nav-link').forEach(link => {
-                //const hrefAttribute = link.getAttribute('href');
-                if (link.getAttribute('href') === currentHash) {
-                    link.classList.add('active');
-                } else {
-                    link.classList.remove('active');
-                }
+        /* ---- Hash router ---- */
+        function route() {
+            var id = location.hash.slice(1);
+            if (ids.indexOf(id) < 0) id = 'about';
+            pages.forEach(function (p) {
+                var on = p.id === id;
+                p.hidden = !on;
+                if (on) { p.classList.remove('fade-in'); void p.offsetWidth; p.classList.add('fade-in'); }
             });
+            $$('.nav-link').forEach(function (a) {
+                var on = a.getAttribute('href') === '#' + id;
+                a.classList.toggle('active', on);
+                if (on) a.setAttribute('aria-current', 'page'); else a.removeAttribute('aria-current');
+            });
+            document.title = titles[id] + BASE;
+            var nav = $('#navbarNav');
+            if (nav && nav.classList.contains('show') && window.bootstrap) bootstrap.Collapse.getOrCreateInstance(nav).hide();
+            window.scrollTo({ top: 0, behavior: 'instant' });
+        }
+        function setNavHeight() { document.documentElement.style.setProperty('--nav-h', $('.navbar').offsetHeight + 'px'); }
 
-            window.scrollTo(0, 0);
+        /* ---- Publications: search + year filter (year list is built automatically) ---- */
+        var sel = $('#yearSelect'), q = $('#pubSearch'), cnt = $('#pubCount'), empty = $('#pubEmpty');
+        var secs = $$('.year-section'), cards = $$('.pub-card');
+        cards.forEach(function (c) { c._t = c.textContent.toLowerCase(); });
+        secs.forEach(function (s) {
+            var o = document.createElement('option'); o.value = o.textContent = s.dataset.year; sel.appendChild(o);
+            var b = document.createElement('span'); b.className = 'year-count'; $('.year-heading', s).appendChild(b);
+        });
+        function filter() {
+            var terms = q.value.trim().toLowerCase().split(/\s+/).filter(Boolean), y = sel.value, shown = 0;
+            secs.forEach(function (s) {
+                var n = 0;
+                $$('.pub-card', s).forEach(function (c) {
+                    var ok = (y === 'all' || s.dataset.year === y) && terms.every(function (t) { return c._t.indexOf(t) > -1; });
+                    c.hidden = !ok; if (ok) n++;
+                });
+                s.hidden = !n; $('.year-count', s).textContent = n; shown += n;
+            });
+            cnt.textContent = shown + ' of ' + cards.length + ' papers';
+            empty.hidden = shown > 0;
+        }
+        q.addEventListener('input', filter); sel.addEventListener('change', filter);
+        $$('[data-pub-search]').forEach(function (a) {
+            a.addEventListener('click', function () { q.value = a.dataset.pubSearch; sel.value = 'all'; filter(); });
+        });
+
+        /* ---- News: show the latest 8, expand on demand ---- */
+        var items = $$('.news-item'), LIMIT = 8;
+        if (items.length > LIMIT) {
+            var extra = items.slice(LIMIT);
+            extra.forEach(function (i) { i.hidden = true; });
+            var btn = document.createElement('button');
+            btn.type = 'button'; btn.className = 'btn btn-outline-secondary btn-sm news-extra-btn';
+            btn.textContent = 'Show earlier news (' + extra.length + ')';
+            btn.addEventListener('click', function () { extra.forEach(function (i) { i.hidden = false; }); btn.remove(); });
+            $('.news-timeline').insertAdjacentElement('afterend', btn);
         }
 
-        window.addEventListener('hashchange', runRouter);
-        window.addEventListener('DOMContentLoaded', runRouter);
+        /* ---- Back to top ---- */
+        var top = $('#toTop');
+        window.addEventListener('scroll', function () { top.classList.toggle('show', window.scrollY > 500); }, { passive: true });
+        top.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
 
-
-        /* Publication Dropdown Filter Function */
-        function filterYearDropdown(selectedYear) {
-            const yearSections = document.querySelectorAll('.year-section');
-            yearSections.forEach(section => {
-                const sectionYear = section.getAttribute('data-year');
-                if (selectedYear === 'all' || sectionYear === selectedYear) {
-                    section.style.display = 'block';
-                } else {
-                    section.style.display = 'none';
-                }
-            });
+        /* ---- Respect reduced motion for the carousel ---- */
+        if (window.matchMedia && matchMedia('(prefers-reduced-motion: reduce)').matches && window.bootstrap) {
+            var car = $('#highlightedWorksCarousel'); if (car) bootstrap.Carousel.getOrCreateInstance(car).pause();
         }
 
-        window.addEventListener('hashchange', runRouter);
-        window.addEventListener('DOMContentLoaded', runRouter);
+        setTimeout(function () { var v = $('#busuanzi_value_site_pv'), p = $('#visitors'); if (v && p && !v.textContent.trim()) p.hidden = true; }, 5000);
+
+        window.addEventListener('hashchange', route);
+        window.addEventListener('resize', setNavHeight);
+        window.addEventListener('load', setNavHeight);
+        filter(); setNavHeight(); route();
+    })();
     </script>
     
 </body>
